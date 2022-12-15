@@ -51,4 +51,8 @@ class Board {
         saveMove(piece, board[nextCoordinate.x()][nextCoordinate.y()]);
         board[nextCoordinate.x()][nextCoordinate.y()] = piece;
     }
+
+    boolean canMoveThere(Piece piece, Coordinate coordinate) {
+        return false;
+    }
 }

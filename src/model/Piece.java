@@ -24,12 +24,12 @@ class Piece {
     }
 
     void move(Coordinate coordinate) {
-        if (canMoveThere(coordinate) && isMoveLegal(coordinate)) {
-            board.movePiece(this.coordinate,coordinate);
+        if (board.canMoveThere(this, coordinate) && isMoveLegal(coordinate)) {
+            board.movePiece(this.coordinate, coordinate);
             this.coordinate = coordinate;
-            if(type == PieceType.PAWN){
-                if(color == Color.BLACK && coordinate.y() == 0) promote();
-                else if(color == Color.WHITE && coordinate.y() == 7) promote();
+            if (type == PieceType.PAWN) {
+                if (color == Color.BLACK && coordinate.y() == 0) promote();
+                else if (color == Color.WHITE && coordinate.y() == 7) promote();
             }
         }
     }
@@ -38,15 +38,11 @@ class Piece {
         return false;
     }
 
-    private boolean canMoveThere(Coordinate newCoordinate) {
-        return false;
-    }
-
     Coordinate getCoordinate() {
         return coordinate;
     }
-    
-     void promote(){
+
+    void promote() {
         this.type = PieceType.QUEEN;
         updateImage();
     }
