@@ -21,5 +21,9 @@ public class GameView extends PApplet {
     public void draw() {
         super.draw();
     }
-    
+
+
+    public void loadImage(){
+
+    }
 }
