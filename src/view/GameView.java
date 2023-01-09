@@ -3,7 +3,7 @@ package view;
 import processing.core.PApplet;
 
 public class GameView extends PApplet {
-    public GameView(){
+    public GameView() {
 
     }
 
@@ -23,7 +23,7 @@ public class GameView extends PApplet {
     }
 
 
-    public void loadImage(){
+    public void loadImage() {
 
     }
 }

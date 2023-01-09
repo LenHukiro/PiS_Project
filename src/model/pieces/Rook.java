@@ -2,16 +2,13 @@ package model.pieces;
 
 import model.Board;
 import model.Coordinate;
-import processing.core.PImage;
 
 import java.awt.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.util.HashSet;
-import java.util.function.Function;
 
 public class Rook extends Piece {
-boolean hasRightToCastle = true;
+    boolean hasRightToCastle = true;
+
     public Rook(Board board, Color color) {
         super(board, color);
     }
@@ -25,23 +22,23 @@ boolean hasRightToCastle = true;
         HashSet<Coordinate> moves = new HashSet<>();
         Coordinate newCoordinate = coordinate; //TODO: fix this ugly mess
         for (int j = 0; j < 8; j++) {
-            newCoordinate.setX(newCoordinate.getX()+1);
-            if(coordinate == null)break;
+            newCoordinate.setX(newCoordinate.getX() + 1);
+            if (coordinate == null) break;
             moves.add(newCoordinate);
         }
-        for (int j = 0; j < 8; j++) {
-            newCoordinate.setX(newCoordinate.getX()-1);
-            if(coordinate == null)break;
+        for (int i = 0; i < 8; i++) {
+            newCoordinate.setX(newCoordinate.getX() - 1);
+            if (coordinate == null) break;
             moves.add(newCoordinate);
         }
-        for (int j = 0; j < 8; j++) {
-            newCoordinate.setY(newCoordinate.getY()+1);
-            if(coordinate == null)break;
+        for (int k = 0; k < 8; k++) {
+            newCoordinate.setY(newCoordinate.getY() + 1);
+            if (coordinate == null) break;
             moves.add(newCoordinate);
         }
-        for (int j = 0; j < 8; j++) {
-            newCoordinate.setY(newCoordinate.getY()-1);
-            if(coordinate == null)break;
+        for (int l = 0; l < 8; l++) {
+            newCoordinate.setY(newCoordinate.getY() - 1);
+            if (coordinate == null) break;
             moves.add(newCoordinate);
         }
         return moves;

@@ -1,7 +1,7 @@
 package model.pieces;
+
 import model.Board;
 import model.Coordinate;
-import processing.core.PImage;
 
 import java.awt.*;
 import java.util.HashSet;

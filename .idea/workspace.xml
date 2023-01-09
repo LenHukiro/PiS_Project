@@ -4,37 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="init+ added libraries">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/bishop_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/bishop_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/king_dark.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/king_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/knight_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/knight_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/pawn_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/pawn_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/queen_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/queen_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/rook_black.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/img/pieces/rook_white.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/BoardRow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pieces/Bishop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pieces/King.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pieces/Knight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pieces/Pawn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pieces/Piece.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pieces/Queen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/pieces/Rook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/IView.java" afterDir="false" />
+    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="added oop structure to pieces and added images">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/GameModel.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Move.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Piece.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/PieceType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Rook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +53,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2ItwWvn2JRepF43ZhL4LFwbfRR2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -134,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671091556914</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="added oop structure to pieces and added images">
+      <created>1672605066578</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1672605066578</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -152,6 +142,7 @@
     <MESSAGE value="init+ added libraries" />
     <MESSAGE value="started creating classes" />
     <MESSAGE value="zwischenstand comittet" />
-    <option name="LAST_COMMIT_MESSAGE" value="zwischenstand comittet" />
+    <MESSAGE value="added oop structure to pieces and added images" />
+    <option name="LAST_COMMIT_MESSAGE" value="added oop structure to pieces and added images" />
   </component>
 </project>

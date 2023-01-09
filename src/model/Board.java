@@ -1,8 +1,6 @@
 package model;
 
 import model.pieces.*;
-import processing.core.PApplet;
-import view.GameView;
 import view.IView;
 
 import java.awt.*;
@@ -71,7 +69,7 @@ public class Board {
         String userInput = scanner.nextLine();
         int x = Integer.parseInt(userInput.split(",")[0]);
         int y = Integer.parseInt(userInput.split(",")[1]);
-        return new Coordinate(x, y);
+        return Coordinate.createCoordinate(x, y);
     }
 
     private boolean gameOver() {
@@ -82,7 +80,7 @@ public class Board {
         System.out.println(color + " hat gewonnen.");
     }
 
-    public void playerComputer() {
+    public void playComputer() {
         computerTurn();
     }
 
@@ -134,12 +132,12 @@ public class Board {
         return moves;
     }
 
-    public Piece getLastMovedPiece(){
-        return moves.get(moves.size()-1).piece();
+    public Piece getLastMovedPiece() {
+        return moves.get(moves.size() - 1).piece();
     }
 
-    public Piece getLastMovedPieceDestPiece(){
-        return moves.get(moves.size()-1).pieceOnCoordinate();
+    public Piece getLastMovedPieceDestPiece() {
+        return moves.get(moves.size() - 1).pieceOnCoordinate();
     }
 
     private void saveMove(Piece piece, Piece pieceOnCoordinate) {

@@ -34,7 +34,7 @@ public abstract class Piece {
 
     protected void setImage() {
         String resPath = "resources" + separator + "img" + separator + "pieces" + separator;
-        image = board.getView().loadImage(resPath+getClass().getSimpleName().toLowerCase() + "_" + color.toString().toLowerCase() + ".png");
+        image = board.getView().loadImage(resPath + getClass().getSimpleName().toLowerCase() + "_" + color.toString().toLowerCase() + ".png");
     }
 
     protected PImage getImage() {
