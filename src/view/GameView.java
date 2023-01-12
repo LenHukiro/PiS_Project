@@ -1,20 +1,30 @@
 package view;
 
+import controlP5.ControlP5;
+import controller.GameController;
+import controller.IController;
 import processing.core.PApplet;
 
-public class GameView extends PApplet {
-    public GameView() {
+public class GameView extends PApplet implements IView {
 
+    ControlP5 p5;
+    IController controller;
+
+    public static void main(String[] args) {
+        PApplet.main(GameView.class);
+    }
+    public GameView() {
+     controller = new GameController();
     }
 
     @Override
     public void settings() {
-        super.settings();
+        size(800, 800);
     }
 
     @Override
     public void setup() {
-        super.setup();
+        p5 = new ControlP5(this);
     }
 
     @Override
@@ -23,7 +33,4 @@ public class GameView extends PApplet {
     }
 
 
-    public void loadImage() {
-
-    }
 }

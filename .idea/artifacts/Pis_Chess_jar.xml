@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="Pis_Chess:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Pis_Chess_jar</output-path>
+    <root id="archive" name="Pis_Chess.jar">
+      <element id="module-output" name="Pis_Chess" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/controlP5.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/core.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

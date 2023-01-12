@@ -10,12 +10,12 @@ public class Pawn extends Piece {
 
     private boolean hasMoved = false;
 
-    public Pawn(Board board, Color color) {
-        super(board, color);
+    public Pawn(Board board, Color color, Coordinate coordinate) {
+        super(board, color,coordinate);
     }
 
-    @Override
-    public void move() {
+    public void move(Coordinate nextCoordinate) {
+        super.move(nextCoordinate);
         hasMoved = true;
     }
 

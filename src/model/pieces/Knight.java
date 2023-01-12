@@ -7,18 +7,8 @@ import java.awt.*;
 import java.util.HashSet;
 
 public class Knight extends Piece {
-    public Knight(Board board, Color color) {
-        super(board, color);
-    }
-
-    @Override
-    public void move() {
-
-    }
-
-    @Override
-    protected void setImage() {
-
+    public Knight(Board board, Color color, Coordinate coordinate) {
+        super(board, color,coordinate);
     }
 
     @Override

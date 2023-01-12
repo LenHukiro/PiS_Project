@@ -8,12 +8,8 @@ import java.util.HashSet;
 
 
 public class Bishop extends Piece {
-    public Bishop(Board board, Color color) {
-        super(board, color);
-    }
-
-    @Override
-    public void move() {
+    public Bishop(Board board, Color color, Coordinate coordinate) {
+        super(board, color,coordinate);
     }
 
     @Override

@@ -1,4 +1,4 @@
 package controller;
 
-public class GameController {
+public class GameController implements IController {
 }

@@ -7,7 +7,6 @@ public class Coordinate {
     public static Coordinate createCoordinate(int x, int y) {
         if (x <= 8 && x >= 0 && y <= 8 && y >= 0)
             return new Coordinate(x, y);
-
         return null;
     }
 

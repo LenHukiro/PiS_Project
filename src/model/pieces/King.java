@@ -10,11 +10,12 @@ public class King extends Piece {
 
     boolean hasMoved = false;
 
-    public King(Board board, Color color) {
-        super(board, color);
+    public King(Board board, Color color,Coordinate coordinate) {
+        super(board, color, coordinate);
     }
 
-    public void move() {
+    public void move(Coordinate nextCoordinate) {
+        super.move(nextCoordinate);
         if (!hasMoved) disableCastling();
     }
 
@@ -41,7 +42,6 @@ public class King extends Piece {
         if (board.getPieceByCoordinate(coordinate.getX() - 1, coordinate.getY()) != null) {
             moves.add(Coordinate.createCoordinate(coordinate.getX() - 1, coordinate.getY()));
         }
-
         return moves;
     }
 }
