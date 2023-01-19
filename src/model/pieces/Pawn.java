@@ -8,21 +8,14 @@ import java.util.HashSet;
 
 public class Pawn extends Piece {
 
-    private boolean hasMoved = false;
-
     public Pawn(Board board, Color color, Coordinate coordinate) {
         super(board, color,coordinate);
-    }
-
-    public void move(Coordinate nextCoordinate) {
-        super.move(nextCoordinate);
-        hasMoved = true;
     }
 
     @Override
     public HashSet<Coordinate> possibleMoves() {
         HashSet<Coordinate> moves = new HashSet<>();
-        int modifier = color == Color.BLACK ? -1 : 1;
+        int modifier = color == Color.BLACK ? 1 : -1;
 
         if (board.getPieceByCoordinate(coordinate.getX(), coordinate.getY() + modifier) == null) {
             // Piece is infront of pawn

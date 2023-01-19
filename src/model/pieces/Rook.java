@@ -7,14 +7,9 @@ import java.awt.*;
 import java.util.HashSet;
 
 public class Rook extends Piece {
-    boolean hasRightToCastle = true;
 
     public Rook(Board board, Color color, Coordinate coordinate) {
         super(board, color,coordinate);
-    }
-
-    public void move() {
-        hasRightToCastle = false;
     }
 
     @Override

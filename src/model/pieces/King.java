@@ -8,23 +8,8 @@ import java.util.HashSet;
 
 public class King extends Piece {
 
-    boolean hasMoved = false;
-
-    public King(Board board, Color color,Coordinate coordinate) {
-        super(board, color, coordinate);
-    }
-
-    public void move(Coordinate nextCoordinate) {
-        super.move(nextCoordinate);
-        if (!hasMoved) disableCastling();
-    }
-
-    private void disableCastling() {
-        Rook[] rooks = board.getAllRooks();
-        for (Rook rook : rooks) {
-            rook.hasRightToCastle = false;
-        }
-        hasMoved = !hasMoved;
+    public King(Board board, Color color, Coordinate coordinate) {
+        super(board, color,coordinate);
     }
 
     @Override
@@ -42,6 +27,7 @@ public class King extends Piece {
         if (board.getPieceByCoordinate(coordinate.getX() - 1, coordinate.getY()) != null) {
             moves.add(Coordinate.createCoordinate(coordinate.getX() - 1, coordinate.getY()));
         }
+
         return moves;
     }
 }

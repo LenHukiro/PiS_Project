@@ -14,10 +14,10 @@ public class Queen extends Piece {
     @Override
     public HashSet<Coordinate> possibleMoves() {
         HashSet<Coordinate> moves = new HashSet<>();
-        Rook rook = new Rook(board, color, Coordinate.createCoordinate(0, 7));
-        Bishop bishop = new Bishop(board, color, Coordinate.createCoordinate(5, 7));
-        moves.addAll(board.simulateMoves(this.coordinate, rook));
-        moves.addAll(board.simulateMoves(this.coordinate, bishop));
+        Rook rook = new Rook(board, color, coordinate);
+        Bishop bishop = new Bishop(board, color, coordinate);
+        moves.addAll(rook.possibleMoves());
+        moves.addAll(bishop.possibleMoves());
         return moves;
     }
 }
