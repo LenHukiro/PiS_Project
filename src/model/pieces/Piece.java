@@ -7,13 +7,11 @@ import processing.core.PImage;
 import java.awt.*;
 import java.util.HashSet;
 
-import static java.io.File.separator;
 
 public abstract class Piece {
     Coordinate coordinate;
     Board board;
     Color color;
-    PImage image;
 
     public Piece(Board board, Color color,Coordinate coordinate) {
         this.board = board;
@@ -25,12 +23,22 @@ public abstract class Piece {
         return coordinate;
     }
 
+    public abstract HashSet<Coordinate> possibleMoves();
 
     public Color getColor() {
         return color;
     }
 
-    public abstract HashSet<Coordinate> possibleMoves();
+    public void setCoordinate(Coordinate coordinate){ this.coordinate = coordinate;}
 
+    public abstract String getName();
+
+    protected String getColorAdverb() {
+        return getColor() == Color.BLACK ? "schwarze" : "weiße";
+    }
+    public Object clone() throws CloneNotSupportedException
+    {
+        return super.clone();
+    }
 }
 

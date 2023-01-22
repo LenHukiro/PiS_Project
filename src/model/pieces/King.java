@@ -9,25 +9,25 @@ import java.util.HashSet;
 public class King extends Piece {
 
     public King(Board board, Color color, Coordinate coordinate) {
-        super(board, color,coordinate);
+        super(board, color, coordinate);
     }
 
     @Override
     public HashSet<Coordinate> possibleMoves() {
         HashSet<Coordinate> moves = new HashSet<>();
-        if (board.getPieceByCoordinate(coordinate.getX(), coordinate.getY() + 1) != null) {
-            moves.add(Coordinate.createCoordinate(coordinate.getX(), coordinate.getY() + 1));
+        int[] modifiers = new int[]{1, 0, -1};
+        for (int i = 0; i <= 2; i++) {
+            for (int j = 0; j <= 2; j++) {
+                if (board.isCoordniateInBounds(coordinate.getX() + modifiers[i], coordinate.getY() + modifiers[j]) && !(i == j && modifiers[j] == 0)) {
+                    moves.add(Coordinate.createCoordinate(coordinate.getX() + modifiers[i], coordinate.getY() + modifiers[j]));
+                }
+            }
         }
-        if (board.getPieceByCoordinate(coordinate.getX() + 1, coordinate.getY()) != null) {
-            moves.add(Coordinate.createCoordinate(coordinate.getX() + 1, coordinate.getY()));
-        }
-        if (board.getPieceByCoordinate(coordinate.getX(), coordinate.getY() - 1) != null) {
-            moves.add(Coordinate.createCoordinate(coordinate.getX(), coordinate.getY() - 1));
-        }
-        if (board.getPieceByCoordinate(coordinate.getX() - 1, coordinate.getY()) != null) {
-            moves.add(Coordinate.createCoordinate(coordinate.getX() - 1, coordinate.getY()));
-        }
-
         return moves;
+    }
+
+    @Override
+    public String getName() {
+        return "der " + this.getColorAdverb() + " Koenig";
     }
 }

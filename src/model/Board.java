@@ -3,41 +3,56 @@ package model;
 import model.pieces.*;
 
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class Board {
 
     Piece[][] board;
     Clock clock;
-    boolean game = false;
+    boolean game = true;
     Coordinate pointCoordinate;
+
+    Piece currentPiece;
+
+    int numberOfMoves;
+    int completedTasks = 0;
 
 
     public Board() {
         clock = new Clock(this);
     }
 
+    public static void main(String[] args) {
+        new Board().newGame();
+    }
+
     public void newGame() {
-        board = new Piece[8][8];
+        game = true;
         generateTask();
-        clock.start();
+        //clock.start();
+        answer(new Random().nextBoolean());
     }
 
 
-    public Piece getPieceByCoordinate(int x, int y) {
-        if (x < 0 || x > 8 || y < 0 || y > 8) return null;
-        return board[y][x];
+    public boolean isCoordniateInBounds(int x, int y) {
+        return x <= 7 && x >= 0 && y <= 7 && y >= 0;
     }
 
     private void generateTask() {
         if (game) {
+            board = new Piece[8][8];
             Coordinate pieceCoordinate = Coordinate.createRandomCoordinate();
-            Piece randomPiece = getRandomPiece(pieceCoordinate);
-            board[pieceCoordinate.getX()][pieceCoordinate.getY()] = randomPiece;
-            while(pointCoordinate.getX() == pieceCoordinate.getX() || pieceCoordinate.getY() == pieceCoordinate.getY()) {
+            currentPiece = getRandomPiece(pieceCoordinate);
+            board[pieceCoordinate.getX()][pieceCoordinate.getY()] = currentPiece;
+            pointCoordinate = Coordinate.createRandomCoordinate();
+            while (pointCoordinate.getX() == pieceCoordinate.getX() && pieceCoordinate.getY() == pieceCoordinate.getY()) {
                 pointCoordinate = Coordinate.createRandomCoordinate();
             }
-            System.out.println("Kann die Figur "+randomPiece.getClass().getSimpleName()+" welches auf dem Feld" +);
+            numberOfMoves = new Random().nextInt(1, 3);
+            System.out.println("Kann die Figur " + currentPiece.getName() + " welches auf dem Feld " + currentPiece.getCoordinate().getFieldCoordinate() + " ist, auf das Feld " + pointCoordinate.getFieldCoordinate() + " in " + numberOfMoves + " Zügen bewegen?");
         }
     }
 
@@ -53,31 +68,52 @@ public class Board {
                 return new Queen(this, color, coordinate);
             }
             case 2 -> {
-                return new Pawn(this, color, coordinate);
-            }
-            case 3 -> {
                 return new Bishop(this, color, coordinate);
             }
-            case 4 -> {
+            case 3 -> {
                 return new Rook(this, color, coordinate);
             }
-            case 5 -> {
+            case 4 -> {
                 return new Knight(this, color, coordinate);
             }
-            default -> throw new IllegalStateException("Unexpected value: " + random);
         }
+        return new Pawn(this, color, coordinate);
     }
 
-    public void stopGame() {
+    void stopGame() {
         game = false;
-        printDoneTaskNumber();
+        System.out.println("Die Zeit ist abgelaufen.\n" + "Sie haben " + completedTasks + " Aufgaben in der Zeit bearbeitet.");
     }
 
-    public void answer(boolean answer){
-
+    public void answer(boolean answer) {
+        ArrayList<Coordinate> coordinateStack = new ArrayList<>(currentPiece.possibleMoves());
+        boolean wasCorrect = false;
+        do {
+            ArrayList<Coordinate> tempStack = new ArrayList<>();
+            for (Coordinate coordinate : coordinateStack) {
+                currentPiece.setCoordinate(coordinate);
+                HashSet<Coordinate> possibleMoves = currentPiece.possibleMoves();
+                for (Coordinate possibleMove : possibleMoves) {
+                    tempStack = tempStack.stream().filter(coordinate1 -> possibleMove.getX() == coordinate1.getX() && possibleMove.getY() == coordinate1.getY()).collect(Collectors.toCollection(ArrayList::new));
+                }
+            }
+            coordinateStack = tempStack;
+            if (coordinateStack.stream().anyMatch(coordinate -> coordinate.getX() == pointCoordinate.getX() && coordinate.getY() == pointCoordinate.getY())) {
+                if (answer) {
+                    wasCorrect = true;
+                    System.out.println("Ihre Anwort war korret.");
+                    completedTasks++;
+                }
+                break;
+            }
+            numberOfMoves--;
+        } while (numberOfMoves > 1);
+        if (!wasCorrect) System.out.println("Ihre Anwort war nicht korret.");
+        generateTask();
     }
 
-    private void printDoneTaskNumber() {
+    public Clock getClock() {
+        return clock;
     }
 }
 

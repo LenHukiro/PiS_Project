@@ -20,4 +20,9 @@ public class Queen extends Piece {
         moves.addAll(bishop.possibleMoves());
         return moves;
     }
+
+    @Override
+    public String getName() {
+        return "die " + this.getColorAdverb() + "Dame";
+    }
 }

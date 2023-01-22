@@ -9,33 +9,30 @@ import java.util.HashSet;
 public class Rook extends Piece {
 
     public Rook(Board board, Color color, Coordinate coordinate) {
-        super(board, color,coordinate);
+        super(board, color, coordinate);
     }
 
     @Override
     public HashSet<Coordinate> possibleMoves() {
         HashSet<Coordinate> moves = new HashSet<>();
-        Coordinate newCoordinate = coordinate; //TODO: fix this ugly mess
+        Coordinate newCoordinate = Coordinate.createCoordinate(coordinate.getX(),coordinate.getY());
         for (int j = 0; j < 8; j++) {
-            newCoordinate.setX(newCoordinate.getX() + 1);
-            if (coordinate == null) break;
-            moves.add(newCoordinate);
+            newCoordinate.setX(j);
+            if (coordinate.getX() == newCoordinate.getX()) continue;
+            moves.add(Coordinate.createCoordinate(newCoordinate.getX(), newCoordinate.getY()));
         }
-        for (int i = 0; i < 8; i++) {
-            newCoordinate.setX(newCoordinate.getX() - 1);
-            if (coordinate == null) break;
-            moves.add(newCoordinate);
+        newCoordinate = Coordinate.createCoordinate(coordinate.getX(),coordinate.getY());
+        for (int j = 0; j < 8; j++) {
+            newCoordinate.setY(j);
+            if (newCoordinate.getY() == coordinate.getY()) continue;
+            moves.add(Coordinate.createCoordinate(newCoordinate.getX(), newCoordinate.getY()));
         }
-        for (int k = 0; k < 8; k++) {
-            newCoordinate.setY(newCoordinate.getY() + 1);
-            if (coordinate == null) break;
-            moves.add(newCoordinate);
-        }
-        for (int l = 0; l < 8; l++) {
-            newCoordinate.setY(newCoordinate.getY() - 1);
-            if (coordinate == null) break;
-            moves.add(newCoordinate);
-        }
+
         return moves;
+    }
+
+    @Override
+    public String getName() {
+        return "der " + this.getColorAdverb() + " Turm";
     }
 }

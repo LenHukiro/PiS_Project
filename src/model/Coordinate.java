@@ -9,7 +9,7 @@ public class Coordinate {
     public static Coordinate createCoordinate(int x, int y) {
         if (x <= 7 && x >= 0 && y <= 7 && y >= 0)
             return new Coordinate(x, y);
-        return null;
+        return new Coordinate(-1,-1);
     }
 
     public static Coordinate createRandomCoordinate() {
@@ -40,15 +40,11 @@ public class Coordinate {
         this.y = y;
     }
 
-    public String getChessNotation(){
-
-        return x+Boardnumbers.class.;
+    public String getFieldCoordinate(){
+        return getBoardLetter(y)+(x+1);
     }
-}
-
-enum Boardnumbers{
-   1(a),2(b),3,4,5,6,7
-
-    Boardnumbers(int row) {
+    private String getBoardLetter(int val){
+        String[] lettes = new String[]{"a","b","c","d","e","f","g","h"};
+        return lettes[val];
     }
 }

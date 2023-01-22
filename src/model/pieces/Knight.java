@@ -14,22 +14,27 @@ public class Knight extends Piece {
     @Override
     public HashSet<Coordinate> possibleMoves() {
         HashSet<Coordinate> moves = new HashSet<>();
-        int[] longKnightMoves = new int[]{2, -2};
-        int[] knightYMoves = new int[]{1, -1};
+        int[] knightTwoStep = new int[]{2, -2};
+        int[] knightOneStep = new int[]{1, -1};
         for (int k = 0; k < 2; k++) {
             for (int j = 0; j < 2; j++) {
-                int x = coordinate.getX() + longKnightMoves[j];
+                int x = coordinate.getX() + knightTwoStep[j];
                 for (int i = 0; i < 2; i++) {
-                    int y = coordinate.getY() + knightYMoves[i];
+                    int y = coordinate.getY() + knightOneStep[i];
                     Coordinate coordinate1 = Coordinate.createCoordinate(x, y);
-                    if (coordinate1 != null)
+                    if (coordinate1.getY() != -1 && coordinate1.getX()!= -1)
                         moves.add(Coordinate.createCoordinate(x, y));
                 }
             }
-            int[] temp = longKnightMoves;
-            longKnightMoves = knightYMoves;
-            knightYMoves = temp;
+            int[] temp = knightTwoStep;
+            knightTwoStep = knightOneStep;
+            knightOneStep = temp;
         }
         return moves;
+    }
+
+    @Override
+    public String getName() {
+        return "der " + this.getColorAdverb() + " Springer";
     }
 }
