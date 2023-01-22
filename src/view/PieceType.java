@@ -2,9 +2,42 @@ package view;
 
 import model.pieces.King;
 
+/**
+ * The enum Piece type.
+ */
 public enum PieceType{
-    KING,QUEEN,PAWN,KNIGHT,BISHOP,ROOK;
-   public static PieceType getValueByString(String piece){
+    /**
+     * King piece type.
+     */
+    KING,
+    /**
+     * Queen piece type.
+     */
+    QUEEN,
+    /**
+     * Pawn piece type.
+     */
+    PAWN,
+    /**
+     * Knight piece type.
+     */
+    KNIGHT,
+    /**
+     * Bishop piece type.
+     */
+    BISHOP,
+    /**
+     * Rook piece type.
+     */
+    ROOK;
+
+    /**
+     * Get value by string piece type.
+     *
+     * @param piece the piece
+     * @return the piece type
+     */
+    public static PieceType getValueByString(String piece){
         switch (piece){
             case "KING" ->{
                 return KING;

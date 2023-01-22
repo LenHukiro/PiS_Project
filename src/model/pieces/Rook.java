@@ -6,8 +6,18 @@ import model.Coordinate;
 import java.awt.*;
 import java.util.HashSet;
 
+/**
+ * The type Rook.
+ */
 public class Rook extends Piece {
 
+    /**
+     * Instantiates a new Rook.
+     *
+     * @param board      the board
+     * @param color      the color
+     * @param coordinate the coordinate
+     */
     public Rook(Board board, Color color, Coordinate coordinate) {
         super(board, color, coordinate);
     }

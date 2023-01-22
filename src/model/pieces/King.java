@@ -6,12 +6,25 @@ import model.Coordinate;
 import java.awt.*;
 import java.util.HashSet;
 
+/**
+ * The type King.
+ */
 public class King extends Piece {
 
+    /**
+     * Instantiates a new King.
+     *
+     * @param board      the board
+     * @param color      the color
+     * @param coordinate the coordinate
+     */
     public King(Board board, Color color, Coordinate coordinate) {
         super(board, color, coordinate);
     }
 
+    /**
+     * @return
+     */
     @Override
     public HashSet<Coordinate> possibleMoves() {
         HashSet<Coordinate> moves = new HashSet<>();
@@ -26,6 +39,9 @@ public class King extends Piece {
         return moves;
     }
 
+    /**
+     * @return
+     */
     @Override
     public String getName() {
         return "der " + this.getColorAdverb() + " Koenig";

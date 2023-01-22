@@ -12,15 +12,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="added Starting GUI">
+    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="proceeded to add GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Cells.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PieceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PieceType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +179,14 @@
       <option name="project" value="LOCAL" />
       <updated>1673520270115</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="proceeded to add GUI">
+      <created>1674426347166</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1674426347166</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -203,7 +208,8 @@
     <MESSAGE value="-added option to create jar to run from jshell&#10;-removed Clock due to LOC limit&#10;- code cleanup" />
     <MESSAGE value="commit current game version" />
     <MESSAGE value="added Btns and ingame logic" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Btns and ingame logic" />
+    <MESSAGE value="proceeded to add GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="proceeded to add GUI" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

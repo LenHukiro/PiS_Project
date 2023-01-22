@@ -6,7 +6,17 @@ import model.Coordinate;
 import java.awt.*;
 import java.util.HashSet;
 
+/**
+ * The type Queen.
+ */
 public class Queen extends Piece {
+    /**
+     * Instantiates a new Queen.
+     *
+     * @param board      the board
+     * @param color      the color
+     * @param coordinate the coordinate
+     */
     public Queen(Board board, Color color, Coordinate coordinate) {
         super(board, color,coordinate);
     }

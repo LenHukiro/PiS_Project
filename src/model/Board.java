@@ -8,27 +8,62 @@ import java.util.HashSet;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+/**
+ * The type Board.
+ */
 public class Board {
 
+    /**
+     * The Board.
+     */
     Piece[][] board;
+    /**
+     * The Clock.
+     */
     Clock clock;
+    /**
+     * The Game.
+     */
     boolean game = true;
+    /**
+     * The Point coordinate.
+     */
     Coordinate pointCoordinate;
 
+    /**
+     * The Current piece.
+     */
     Piece currentPiece;
 
+    /**
+     * The Number of moves.
+     */
     int numberOfMoves;
+    /**
+     * The Completed tasks.
+     */
     int completedTasks = 0;
 
 
+    /**
+     * Instantiates a new Board.
+     */
     public Board() {
         clock = new Clock(this);
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         new Board().newGame();
     }
 
+    /**
+     * New game.
+     */
     public void newGame() {
         game = true;
         generateTask();
@@ -37,6 +72,13 @@ public class Board {
     }
 
 
+    /**
+     * Is coordniate in bounds boolean.
+     *
+     * @param x the x
+     * @param y the y
+     * @return the boolean
+     */
     public boolean isCoordniateInBounds(int x, int y) {
         return x <= 7 && x >= 0 && y <= 7 && y >= 0;
     }
@@ -80,11 +122,19 @@ public class Board {
         return new Pawn(this, color, coordinate);
     }
 
+    /**
+     * Stop game.
+     */
     void stopGame() {
         game = false;
         System.out.println("Die Zeit ist abgelaufen.\n" + "Sie haben " + completedTasks + " Aufgaben in der Zeit bearbeitet.");
     }
 
+    /**
+     * Answer.
+     *
+     * @param answer the answer
+     */
     public void answer(boolean answer) {
         ArrayList<Coordinate> coordinateStack = new ArrayList<>(currentPiece.possibleMoves());
         boolean wasCorrect = false;
@@ -112,10 +162,20 @@ public class Board {
         generateTask();
     }
 
+    /**
+     * Gets time.
+     *
+     * @return the time
+     */
     public String getTime() {
         return clock.getTimeInMinutesAndSeconds();
     }
 
+    /**
+     * Get current piece piece.
+     *
+     * @return the piece
+     */
     public Piece getCurrentPiece(){
         return currentPiece;
     }

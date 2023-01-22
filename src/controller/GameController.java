@@ -5,10 +5,24 @@ import model.pieces.Piece;
 import view.GameView;
 import view.PieceType;
 
+/**
+ * The type Game controller.
+ */
 public class GameController implements IController {
+    /**
+     * The Model.
+     */
     Board model;
+    /**
+     * The View.
+     */
     GameView view;
 
+    /**
+     * Instantiates a new Game controller.
+     *
+     * @param view the view
+     */
     public GameController(GameView view) {
         this.view = view;
     }
@@ -23,6 +37,7 @@ public class GameController implements IController {
     @Override
     public void answer_accept() {
         model.answer(true);
+        view.updateBoard();
     }
 
     @Override
@@ -35,6 +50,11 @@ public class GameController implements IController {
         return model.getTime();
     }
 
+    /**
+     * Place piece.
+     *
+     * @param currentPiece the current piece
+     */
     public void placePiece(Piece currentPiece) {
         view.placePiece(getPieceTyp(currentPiece),currentPiece.getColor(),currentPiece.getCoordinate().getX(),currentPiece.getCoordinate().getY());
     }

@@ -1,10 +1,24 @@
 package model;
 
+/**
+ * The type Clock.
+ */
 public class Clock extends Thread {
 
+    /**
+     * The Seconds.
+     */
     int seconds;
+    /**
+     * The Board.
+     */
     Board board;
 
+    /**
+     * Instantiates a new Clock.
+     *
+     * @param board the board
+     */
     Clock(Board board) {
         this.board = board;
         seconds = 10;
@@ -24,6 +38,11 @@ public class Clock extends Thread {
         board.stopGame();
     }
 
+    /**
+     * Gets time in minutes and seconds.
+     *
+     * @return the time in minutes and seconds
+     */
     public String getTimeInMinutesAndSeconds() {
         int minutes = seconds / 60;
         String secondString = String.valueOf(seconds % 60);

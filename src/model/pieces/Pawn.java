@@ -6,9 +6,19 @@ import model.Coordinate;
 import java.awt.*;
 import java.util.HashSet;
 
+/**
+ * The type Pawn.
+ */
 public class Pawn extends Piece {
     private final boolean hasntMoved;
 
+    /**
+     * Instantiates a new Pawn.
+     *
+     * @param board      the board
+     * @param color      the color
+     * @param coordinate the coordinate
+     */
     public Pawn(Board board, Color color, Coordinate coordinate) {
         super(board, color, coordinate);
         hasntMoved = color == Color.BLACK && coordinate.getY() == 1 || color == Color.WHITE && coordinate.getY() == 6;

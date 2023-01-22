@@ -10,20 +10,46 @@ import processing.core.PImage;
 import java.awt.*;
 import java.util.HashMap;
 
+/**
+ * The type Game view.
+ */
 public class GameView extends PApplet implements IView {
 
+    /**
+     * The P 5.
+     */
     ControlP5 p5;
+    /**
+     * The Controller.
+     */
     IController controller;
 
+    /**
+     * The Images.
+     */
     HashMap<String,PImage> images;
+    /**
+     * The Timer.
+     */
     Textfield timer;
+    /**
+     * The Board.
+     */
     Board board;
 
+    /**
+     * Instantiates a new Game view.
+     */
     public GameView() {
         controller = new GameController(this);
         loadImages();
     }
 
+    /**
+     * The entry point of application.
+     *
+     * @param args the input arguments
+     */
     public static void main(String[] args) {
         PApplet.main(GameView.class);
     }
@@ -46,6 +72,9 @@ public class GameView extends PApplet implements IView {
         board = new Board(this);
     }
 
+    /**
+     * New game.
+     */
     public void newGame(){
         new Thread(() -> {
             String time = controller.getTime();
@@ -63,7 +92,7 @@ public class GameView extends PApplet implements IView {
     @Override
     public void draw() {
         timer.setValue(controller.getTime());
-        super.draw();
+        board.draw();
     }
 
     private void loadImages(){
@@ -72,13 +101,33 @@ public class GameView extends PApplet implements IView {
             images.put(pieceName, loadImage(pieceName + ".png"));
         }
     }
+
+    /**
+     * Get image p image.
+     *
+     * @param type  the type
+     * @param color the color
+     * @return the p image
+     */
     public PImage getImage(PieceType type, Color color){
         String key =type.toString().toLowerCase()+"_"+color.toString().toLowerCase();
         return images.get(key);
     }
 
+    /**
+     * Place piece.
+     *
+     * @param pieceTyp the piece typ
+     * @param color    the color
+     * @param x        the x
+     * @param y        the y
+     */
     public void placePiece(PieceType pieceTyp,Color color, int x, int y){
         board.placePiece(pieceTyp,color,x,y);
     }
 
+    @Override
+    public void updateBoard() {
+        board.
+    }
 }

@@ -6,7 +6,17 @@ import model.Coordinate;
 import java.awt.*;
 import java.util.HashSet;
 
+/**
+ * The type Knight.
+ */
 public class Knight extends Piece {
+    /**
+     * Instantiates a new Knight.
+     *
+     * @param board      the board
+     * @param color      the color
+     * @param coordinate the coordinate
+     */
     public Knight(Board board, Color color, Coordinate coordinate) {
         super(board, color,coordinate);
     }
