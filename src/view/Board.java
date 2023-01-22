@@ -19,7 +19,8 @@ public class Board {
     /**
      * The X.
      */
-    int x, /**
+    int x,
+    /**
      * The Y.
      */
     y;

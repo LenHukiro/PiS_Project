@@ -128,6 +128,6 @@ public class GameView extends PApplet implements IView {
 
     @Override
     public void updateBoard() {
-        board.
+
     }
 }

@@ -62,4 +62,8 @@ public class GameController implements IController {
     private PieceType getPieceTyp(Piece currentPiece){
         return PieceType.getValueByString(currentPiece.getClass().getSimpleName().toUpperCase());
     }
+
+    public void updateBoard() {
+        placePiece(model.getCurrentPiece());
+    }
 }
