@@ -1,10 +1,14 @@
 package view;
 
-public class Cells {
+import java.awt.*;
 
+public class Cell {
+
+    private final Color color;
     Piece piece;
     boolean marked;
-    Cells(Piece piece){
+    Cell(Piece piece, Color color){
+        this.color = color;
         this.piece = piece;
     }
 
@@ -16,7 +20,7 @@ public class Cells {
         marked = false;
     }
 
-    public void draw(){
-
+    public void draw(GameView view){
+        view.rect(0,0,0,0);
     }
 }

@@ -101,19 +101,23 @@ public class Board {
             if (coordinateStack.stream().anyMatch(coordinate -> coordinate.getX() == pointCoordinate.getX() && coordinate.getY() == pointCoordinate.getY())) {
                 if (answer) {
                     wasCorrect = true;
-                    System.out.println("Ihre Anwort war korret.");
+                    System.out.println("Ihre Anwort war korrekt.");
                     completedTasks++;
                 }
                 break;
             }
             numberOfMoves--;
         } while (numberOfMoves > 1);
-        if (!wasCorrect) System.out.println("Ihre Anwort war nicht korret.");
+        if (!wasCorrect) System.out.println("Ihre Anwort war nicht korrekt.");
         generateTask();
     }
 
-    public Clock getClock() {
-        return clock;
+    public String getTime() {
+        return clock.getTimeInMinutesAndSeconds();
+    }
+
+    public Piece getCurrentPiece(){
+        return currentPiece;
     }
 }
 

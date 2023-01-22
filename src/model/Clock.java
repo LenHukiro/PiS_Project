@@ -16,7 +16,7 @@ public class Clock extends Thread {
             try {
                 Thread.sleep(1000);
                 seconds--;
-                System.out.println(getTimeinMinutesAndSeconds());
+                System.out.println(getTimeInMinutesAndSeconds());
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -24,7 +24,7 @@ public class Clock extends Thread {
         board.stopGame();
     }
 
-    public String getTimeinMinutesAndSeconds() {
+    public String getTimeInMinutesAndSeconds() {
         int minutes = seconds / 60;
         String secondString = String.valueOf(seconds % 60);
         if (seconds < 10) secondString = "0" + secondString;

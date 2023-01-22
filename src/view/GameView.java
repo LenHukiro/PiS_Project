@@ -10,17 +10,18 @@ import processing.core.PImage;
 import java.awt.*;
 import java.util.HashMap;
 
-import static controlP5.ControlP5Constants.ACTION_RELEASE;
-
 public class GameView extends PApplet implements IView {
 
     ControlP5 p5;
     IController controller;
 
     HashMap<String,PImage> images;
+    Textfield timer;
+    Board board;
 
     public GameView() {
-        controller = new GameController();
+        controller = new GameController(this);
+        loadImages();
     }
 
     public static void main(String[] args) {
@@ -38,15 +39,30 @@ public class GameView extends PApplet implements IView {
         Button newGameBtn = p5.addButton("NewGameBtn");
         Button yesBtn = p5.addButton("Feld ist erreichbar");
         Button noBtn = p5.addButton("Feld ist nicht erreichbar");
-        Textfield timer = p5.addTextfield(controller.getTime());
+        timer = p5.addTextfield(controller.getTime());
+        newGameBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.newGame());
+        yesBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.answer_accept());
+        noBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.answer_decline());
+        board = new Board(this);
+    }
 
-        newGameBtn.addListenerFor(ACTION_RELEASE, callbackEvent -> controller.newGame());
-        yesBtn.addListenerFor(ACTION_RELEASE, callbackEvent -> controller.answer_accept());
-        noBtn.addListenerFor(ACTION_RELEASE, callbackEvent -> controller.answer_decline());
+    public void newGame(){
+        new Thread(() -> {
+            String time = controller.getTime();
+            while(!time.equals("0:00")){
+                timer.setValue(controller.getTime());
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
     }
 
     @Override
     public void draw() {
+        timer.setValue(controller.getTime());
         super.draw();
     }
 
@@ -60,4 +76,9 @@ public class GameView extends PApplet implements IView {
         String key =type.toString().toLowerCase()+"_"+color.toString().toLowerCase();
         return images.get(key);
     }
+
+    public void placePiece(PieceType pieceTyp,Color color, int x, int y){
+        board.placePiece(pieceTyp,color,x,y);
+    }
+
 }
