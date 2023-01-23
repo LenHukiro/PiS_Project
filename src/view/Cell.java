@@ -8,6 +8,7 @@ import java.awt.*;
 public class Cell {
 
     private final Color color;
+    int radius = 50;
     /**
      * The Piece.
      */
@@ -20,26 +21,29 @@ public class Cell {
     /**
      * Instantiates a new Cell.
      *
-     * @param piece the piece
      * @param color the color
      */
-    Cell(Piece piece, Color color){
+    Cell(Color color) {
         this.color = color;
-        this.piece = piece;
     }
 
     /**
      * Mark.
      */
-    public void mark(){
+    public void mark() {
         marked = true;
     }
 
     /**
      * Unmark.
      */
-    public void unmark(){
+    public void unmark() {
         marked = false;
+        this.piece = null;
+    }
+
+    public void placePiece(Piece piece){
+        this.piece = piece;
     }
 
     /**
@@ -49,7 +53,9 @@ public class Cell {
      * @param x    the x
      * @param y    the y
      */
-    public void draw(GameView view, int x, int y){
-        view.rect(0,0,0,0);
+    public void draw(GameView view, int x, int y) {
+        view.fill(color.getRGB());
+        if (marked) view.fill(Color.RED.getRGB());
+        view.rect(x, y, radius, radius);
     }
 }

@@ -1,6 +1,6 @@
 package model.pieces;
 
-import model.Board;
+import model.GameModel;
 import model.Coordinate;
 
 import java.awt.*;
@@ -17,7 +17,7 @@ public class Knight extends Piece {
      * @param color      the color
      * @param coordinate the coordinate
      */
-    public Knight(Board board, Color color, Coordinate coordinate) {
+    public Knight(GameModel board, Color color, Coordinate coordinate) {
         super(board, color,coordinate);
     }
 

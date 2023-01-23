@@ -1,6 +1,6 @@
 package model.pieces;
 
-import model.Board;
+import model.GameModel;
 import model.Coordinate;
 
 import java.awt.*;
@@ -19,7 +19,7 @@ public class Pawn extends Piece {
      * @param color      the color
      * @param coordinate the coordinate
      */
-    public Pawn(Board board, Color color, Coordinate coordinate) {
+    public Pawn(GameModel board, Color color, Coordinate coordinate) {
         super(board, color, coordinate);
         hasntMoved = color == Color.BLACK && coordinate.getY() == 1 || color == Color.WHITE && coordinate.getY() == 6;
     }

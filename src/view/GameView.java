@@ -27,7 +27,9 @@ public class GameView extends PApplet implements IView {
     /**
      * The Images.
      */
-    HashMap<String,PImage> images;
+    HashMap<String,PImage> images = new HashMap<>();
+
+    boolean updateBoard = false;
     /**
      * The Timer.
      */
@@ -42,7 +44,6 @@ public class GameView extends PApplet implements IView {
      */
     public GameView() {
         controller = new GameController(this);
-        loadImages();
     }
 
     /**
@@ -61,15 +62,19 @@ public class GameView extends PApplet implements IView {
 
     @Override
     public void setup() {
+        loadImages();
         p5 = new ControlP5(this);
-        Button newGameBtn = p5.addButton("NewGameBtn");
-        Button yesBtn = p5.addButton("Feld ist erreichbar");
-        Button noBtn = p5.addButton("Feld ist nicht erreichbar");
-        timer = p5.addTextfield(controller.getTime());
-        newGameBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.newGame());
-        yesBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.answer_accept());
+        Button newGameBtn = p5.addButton("Neues Spiel").setPosition(420,175);
+        Button yesBtn = p5.addButton("Feld ist erreichbar").setWidth(100).setPosition(420,325);
+        Button noBtn = p5.addButton("Feld ist nicht erreichbar").setWidth(110).setPosition(420,375);
+        timer = p5.addTextfield(controller.getTime()).lock().setPosition(413,10).setWidth(30);
+        newGameBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent ->{ controller.newGame();});
+        yesBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> {
+            controller.answer_accept();
+        });
         noBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.answer_decline());
         board = new Board(this);
+        updateBoard = true;
     }
 
     /**
@@ -91,14 +96,17 @@ public class GameView extends PApplet implements IView {
 
     @Override
     public void draw() {
+        if(updateBoard) {
+            board.draw();
+            updateBoard = false;
+        }
         timer.setValue(controller.getTime());
-        board.draw();
     }
 
     private void loadImages(){
         String[] pieceNames = new String[]{"bishop_black","bishop_white","king_black","king_white","knight_black","knight_white","pawn_black","pawn_white","queen_black","queen_white","rook_black","rook_white"};
         for (String pieceName : pieceNames) {
-            images.put(pieceName, loadImage(pieceName + ".png"));
+            images.put(pieceName, loadImage("resources/img/pieces/"+pieceName + ".png"));
         }
     }
 
@@ -128,6 +136,6 @@ public class GameView extends PApplet implements IView {
 
     @Override
     public void updateBoard() {
-
+        updateBoard = true;
     }
 }

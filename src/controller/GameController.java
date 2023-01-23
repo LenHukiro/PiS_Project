@@ -1,6 +1,6 @@
 package controller;
 
-import model.Board;
+import model.GameModel;
 import model.pieces.Piece;
 import view.GameView;
 import view.PieceType;
@@ -12,7 +12,7 @@ public class GameController implements IController {
     /**
      * The Model.
      */
-    Board model;
+    GameModel model;
     /**
      * The View.
      */
@@ -25,6 +25,7 @@ public class GameController implements IController {
      */
     public GameController(GameView view) {
         this.view = view;
+        this.model = new GameModel();
     }
 
     @Override

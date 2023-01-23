@@ -1,6 +1,6 @@
 package model.pieces;
 
-import model.Board;
+import model.GameModel;
 import model.Coordinate;
 
 import java.awt.*;
@@ -18,7 +18,7 @@ public class King extends Piece {
      * @param color      the color
      * @param coordinate the coordinate
      */
-    public King(Board board, Color color, Coordinate coordinate) {
+    public King(GameModel board, Color color, Coordinate coordinate) {
         super(board, color, coordinate);
     }
 

@@ -12,14 +12,14 @@ public class Clock extends Thread {
     /**
      * The Board.
      */
-    Board board;
+    GameModel board;
 
     /**
      * Instantiates a new Clock.
      *
      * @param board the board
      */
-    Clock(Board board) {
+    Clock(GameModel board) {
         this.board = board;
         seconds = 10;
     }

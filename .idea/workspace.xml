@@ -13,7 +13,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="addded barebone comments">
+      <change afterPath="$PROJECT_DIR$/src/model/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/Grid.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Knight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Rook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,9 +102,9 @@
       <recent name="C:\Users\Nikla\IdeaProjects\Pis_Chess\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Board">
-    <configuration name="Board" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="model.Board" />
+  <component name="RunManager" selected="Application.GameView">
+    <configuration name="GameModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="model.GameModel" />
       <module name="Pis_Chess" />
       <extension name="coverage">
         <pattern>
@@ -115,10 +131,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Board" />
         <item itemvalue="Application.GameView" />
+        <item itemvalue="Application.GameModel" />
         <item itemvalue="Application.GameView" />
-        <item itemvalue="Application.Board" />
+        <item itemvalue="Application.GameModel" />
         <item itemvalue="Application.GameView" />
       </list>
     </recent_temporary>

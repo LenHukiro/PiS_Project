@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 /**
  * The type Board.
  */
-public class Board {
+public class GameModel {
 
     /**
      * The Board.
@@ -24,7 +24,7 @@ public class Board {
     /**
      * The Game.
      */
-    boolean game = true;
+    boolean game = false;
     /**
      * The Point coordinate.
      */
@@ -48,7 +48,7 @@ public class Board {
     /**
      * Instantiates a new Board.
      */
-    public Board() {
+    public GameModel() {
         clock = new Clock(this);
     }
 
@@ -58,7 +58,7 @@ public class Board {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        new Board().newGame();
+        new GameModel().newGame();
     }
 
     /**
@@ -136,6 +136,7 @@ public class Board {
      * @param answer the answer
      */
     public void answer(boolean answer) {
+        if(!game) return;
         ArrayList<Coordinate> coordinateStack = new ArrayList<>(currentPiece.possibleMoves());
         boolean wasCorrect = false;
         do {

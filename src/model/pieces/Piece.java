@@ -1,8 +1,7 @@
 package model.pieces;
 
-import model.Board;
+import model.GameModel;
 import model.Coordinate;
-import processing.core.PImage;
 
 import java.awt.*;
 import java.util.HashSet;
@@ -19,7 +18,7 @@ public abstract class Piece {
     /**
      * The Board.
      */
-    Board board;
+    GameModel board;
     /**
      * The Color.
      */
@@ -32,7 +31,7 @@ public abstract class Piece {
      * @param color      the color
      * @param coordinate the coordinate
      */
-    public Piece(Board board, Color color,Coordinate coordinate) {
+    public Piece(GameModel board, Color color, Coordinate coordinate) {
         this.board = board;
         this.color = color;
         this.coordinate = coordinate;

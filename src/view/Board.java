@@ -25,6 +25,8 @@ public class Board {
      */
     y;
 
+    Cell markedCell;
+
     /**
      * Instantiates a new Board.
      *
@@ -36,9 +38,10 @@ public class Board {
         boolean alternatingColor = false;
         for (int i = 0; i < cells.length; i++) {
             for (int j = 0; j < cells[i].length; j++) {
-                cells[i][j] = new Cell(null, alternatingColor ? Color.getColor("#eeeed2") : Color.getColor("#769656"));
+                cells[i][j] = new Cell(alternatingColor ? Color.decode("#eeeed2") : Color.decode("#769656"));
                 alternatingColor = !alternatingColor;
             }
+            alternatingColor = !alternatingColor;
         }
         x = 10;
         y = 10;
@@ -53,20 +56,26 @@ public class Board {
      * @param y     the y
      */
     public void placePiece(PieceType type, Color color, int x, int y) {
-        cells[y][x] = new Cell(new Piece(view, type, color == Color.BLACK), Color.getColor("#eeeed2"));
+        if(markedCell != null)
+            markedCell.unmark();
+
+        markedCell  = cells[y][x];
+        markedCell.placePiece(new Piece(view, type, color == Color.BLACK));
     }
 
     /**
      * Draw.
      */
     public void draw() {
+        int cellX = x;
         for (Cell[] cell : cells) {
             for (Cell innerCell : cell) {
-                innerCell.draw(view, x, y);
-                x = +10;
+                innerCell.draw(view, cellX, y);
+                cellX += 50;
             }
-            y += 10;
-            x = 10;
+            y += 50;
+            cellX = 10;
         }
+        x = cellX;
     }
 }
