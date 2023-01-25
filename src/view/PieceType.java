@@ -2,57 +2,58 @@ package view;
 
 
 /**
- * The enum Piece type.
+ * Enum containing the possible chess Piece Types
  */
-public enum PieceType{
+public enum PieceType {
     /**
-     * King Piece type.
+     * Type representing the Piece King.
      */
     KING,
     /**
-     * Queen Piece type.
+     * Type representing the Piece King Queen.
      */
     QUEEN,
     /**
-     * Pawn Piece type.
+     * Type representing the Piece Pawn.
      */
     PAWN,
     /**
-     * Knight Piece type.
+     *  Type representing the Piece Knight.
      */
     KNIGHT,
     /**
-     * Bishop Piece type.
+     * Type representing the Piece Bishop.
      */
     BISHOP,
     /**
-     * Rook Piece type.
+     * Type representing the Piece Rook.
      */
     ROOK;
 
     /**
-     * Get value by string Piece type.
+     * Gets Value of PieceType for given String or null, if it is not a valid PieceType.
      *
-     * @param piece the Piece
-     * @return the Piece type
+     * @param piece The requested PieceType
+     * @return The PieceType
      */
-    public static PieceType getValueByString(String piece){
-        switch (piece){
-            case "KING" ->{
+    public static PieceType getValueByString(String piece) {
+        switch (piece.toUpperCase()) {
+            case "KING" -> {
                 return KING;
-            }case "QUEEN"->{
+            }
+            case "QUEEN" -> {
                 return QUEEN;
             }
-            case "KNIGHT"->{
+            case "KNIGHT" -> {
                 return KNIGHT;
             }
-            case "BISHOP"->{
+            case "BISHOP" -> {
                 return BISHOP;
             }
-            case "ROOK"->{
+            case "ROOK" -> {
                 return ROOK;
             }
-            case "PAWN"->{
+            case "PAWN" -> {
                 return PAWN;
             }
             default -> {

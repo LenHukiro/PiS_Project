@@ -12,25 +12,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="- Finished game and finished implementing GUI">
-      <change afterPath="$PROJECT_DIR$/src/model/IModel.java" afterDir="false" />
+    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="- Added IModel&#10;- Added comments and refractored code">
+      <change afterPath="$PROJECT_DIR$/src/controller/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Coordinate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Bishop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/King.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Knight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Pawn.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Queen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Rook.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/package-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Grid.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PieceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PieceType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/package-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +31,7 @@
         <option value="Enum" />
         <option value="Class" />
         <option value="Interface" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
@@ -209,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674636448236</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="- Added IModel&#10;- Added comments and refractored code">
+      <created>1674643108007</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1674643108007</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -234,7 +230,8 @@
     <MESSAGE value="proceeded to add GUI" />
     <MESSAGE value="addded barebone comments" />
     <MESSAGE value="- Finished game and finished implementing GUI" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Finished game and finished implementing GUI" />
+    <MESSAGE value="- Added IModel&#10;- Added comments and refractored code" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Added IModel&#10;- Added comments and refractored code" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

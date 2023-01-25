@@ -3,7 +3,15 @@ package view;
 import java.awt.*;
 
 /**
- * The Cell class.
+ * The Cell class to show a Cell, which is being marked or has a piece inside.
+ * <p></p>
+ * It is being used inside the Board class to show a Piece or a mark.
+ * The draw function is being called by the board, so it doesn't need to be called.
+ * It can be used like this:
+ * Cell cell = new Cell(Color.RED):
+ * placePiece(new Piece(board,PieceType.PAWN,true))
+ * mark(true);
+ * placePiece(null);
  */
 public class Cell {
 
