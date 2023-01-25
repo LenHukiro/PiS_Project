@@ -4,100 +4,109 @@ import model.pieces.*;
 
 import java.awt.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 /**
- * The type Board.
+ * The game itself
+ *
+ * THe model is can be used like this:
+ * Gamemodel model = new Gamemodel();
+ *
+ * model.answer(true);
+ * model.answer(false);
  */
 public class GameModel {
 
     /**
-     * The Board.
-     */
-    Piece[][] board;
-    /**
      * The Clock.
      */
-    Clock clock;
-    /**
-     * The Game.
-     */
-    boolean game = false;
-    /**
-     * The Point coordinate.
-     */
-    Coordinate pointCoordinate;
+    private Clock clock;
 
     /**
-     * The Current piece.
+     * Shows if the game is running.
      */
-    Piece currentPiece;
+    private boolean game = false;
 
     /**
-     * The Number of moves.
+     * The coordinate of the marked field.
      */
-    int numberOfMoves;
-    /**
-     * The Completed tasks.
-     */
-    int completedTasks = 0;
 
+    private Coordinate pointCoordinate;
+
+    /**
+     * The currently active Piece
+     */
+    private Piece currentPiece;
+
+    /**
+     * The number of allowed moves.
+     */
+    private int numberOfMoves;
+
+    /**
+     * The number of completed tasks.
+     */
+    private int completedTasks = 0;
 
     /**
      * Instantiates a new Board.
      */
     public GameModel() {
-        clock = new Clock(this);
+        clock = new Clock(this,0);
     }
 
     /**
-     * The entry point of application.
-     *
-     * @param args the input arguments
-     */
-    public static void main(String[] args) {
-        new GameModel().newGame();
-    }
-
-    /**
-     * New game.
+     * Starts a new game
      */
     public void newGame() {
-        game = true;
-        generateTask();
-        //clock.start();
-        answer(new Random().nextBoolean());
+        newGame(500);
     }
 
+    /**
+     * Starts a new game
+     *
+     * @param seconds the seconds
+     */
+    public void newGame(int seconds) {
+        game = true;
+        generateTask();
+        clock = new Clock(this, seconds);
+        clock.start();
+    }
 
     /**
-     * Is coordniate in bounds boolean.
+     * Checks if the given coordinate is inside the playing field
      *
      * @param x the x
      * @param y the y
-     * @return the boolean
+     * @return boolean, true if the coordinate is inside the field
      */
-    public boolean isCoordniateInBounds(int x, int y) {
+    public boolean isCoordinateInBounds(int x, int y) {
         return x <= 7 && x >= 0 && y <= 7 && y >= 0;
     }
 
+    /**
+     * Generates a new Position for the player.
+     */
     private void generateTask() {
         if (game) {
-            board = new Piece[8][8];
             Coordinate pieceCoordinate = Coordinate.createRandomCoordinate();
             currentPiece = getRandomPiece(pieceCoordinate);
-            board[pieceCoordinate.getX()][pieceCoordinate.getY()] = currentPiece;
             pointCoordinate = Coordinate.createRandomCoordinate();
-            while (pointCoordinate.getX() == pieceCoordinate.getX() && pieceCoordinate.getY() == pieceCoordinate.getY()) {
+            while (pointCoordinate.getX() == pieceCoordinate.getX() && pointCoordinate.getY() == pieceCoordinate.getY()) {
                 pointCoordinate = Coordinate.createRandomCoordinate();
             }
             numberOfMoves = new Random().nextInt(1, 3);
-            System.out.println("Kann die Figur " + currentPiece.getName() + " welches auf dem Feld " + currentPiece.getCoordinate().getFieldCoordinate() + " ist, auf das Feld " + pointCoordinate.getFieldCoordinate() + " in " + numberOfMoves + " Zügen bewegen?");
+            System.out.println("Kann die Figur " + currentPiece.getName() + " welches sich auf dem Feld " + currentPiece.getCoordinate().getFieldCoordinate() + " befindet, auf das Feld " + pointCoordinate.getFieldCoordinate() + " in " + numberOfMoves + " Zügen bewegen?");
         }
     }
 
+    /**
+     * Generates a random Piece on a given coordinate
+     *
+     * @param coordinate The coordinate of the generated Piece
+     * @return The generated Piece
+     */
     private Piece getRandomPiece(Coordinate coordinate) {
         Random random = new Random();
         int pieceNumber = random.nextInt(0, 6);
@@ -123,7 +132,7 @@ public class GameModel {
     }
 
     /**
-     * Stop game.
+     * Stops the game and prints the result
      */
     void stopGame() {
         game = false;
@@ -131,54 +140,103 @@ public class GameModel {
     }
 
     /**
-     * Answer.
+     * Answers the current Task and starts a new one
      *
      * @param answer the answer
      */
     public void answer(boolean answer) {
-        if(!game) return;
-        ArrayList<Coordinate> coordinateStack = new ArrayList<>(currentPiece.possibleMoves());
-        boolean wasCorrect = false;
-        do {
-            ArrayList<Coordinate> tempStack = new ArrayList<>();
-            for (Coordinate coordinate : coordinateStack) {
-                currentPiece.setCoordinate(coordinate);
-                HashSet<Coordinate> possibleMoves = currentPiece.possibleMoves();
-                for (Coordinate possibleMove : possibleMoves) {
-                    tempStack = tempStack.stream().filter(coordinate1 -> possibleMove.getX() == coordinate1.getX() && possibleMove.getY() == coordinate1.getY()).collect(Collectors.toCollection(ArrayList::new));
-                }
-            }
-            coordinateStack = tempStack;
-            if (coordinateStack.stream().anyMatch(coordinate -> coordinate.getX() == pointCoordinate.getX() && coordinate.getY() == pointCoordinate.getY())) {
-                if (answer) {
-                    wasCorrect = true;
-                    System.out.println("Ihre Anwort war korrekt.");
-                    completedTasks++;
-                }
-                break;
-            }
-            numberOfMoves--;
-        } while (numberOfMoves > 1);
-        if (!wasCorrect) System.out.println("Ihre Anwort war nicht korrekt.");
+        if (!game) return;
+        evaluateAnswer(getPieceCoordinates(), answer);
         generateTask();
     }
 
     /**
-     * Gets time.
+     * Returns the allowed possible moves of the current Piece
      *
-     * @return the time
+     * @return a list of possible Coordinates
+     */
+    private ArrayList<Coordinate> getPieceCoordinates() {
+        ArrayList<Coordinate> coordinateStack = new ArrayList<>(currentPiece.possibleMoves());
+        ArrayList<Coordinate> tempStack = new ArrayList<>();
+        if (numberOfMoves > 1) {
+            for (Coordinate coordinate : coordinateStack) {
+                currentPiece.setCoordinate(coordinate);
+                ArrayList<Coordinate> possibleMoves = currentPiece.possibleMoves();
+                for (Coordinate possibleMove : possibleMoves) {
+                    if (coordinateStack.stream().noneMatch(visitedCoordinate -> possibleMove.getX() == visitedCoordinate.getX() && possibleMove.getY() == visitedCoordinate.getY())
+                            && tempStack.stream().noneMatch(visitedCoordinate -> possibleMove.getX() == visitedCoordinate.getX() && possibleMove.getY() == visitedCoordinate.getY()) &&
+                            (possibleMove.getX() != currentPiece.getCoordinate().getX() && possibleMove.getY() != currentPiece.getCoordinate().getY()))
+                        tempStack.add(possibleMove);
+                }
+            }
+            coordinateStack.addAll(tempStack);
+        }
+        return coordinateStack;
+    }
+
+    /**
+     * Evaluates if the user answered the Task correctly
+     *
+     * @param coordinateStack The possible moves
+     * @param answer          The given userInput
+     */
+    private void evaluateAnswer(ArrayList<Coordinate> coordinateStack, boolean answer) {
+        if (coordinateStack.stream().anyMatch(coordinate -> coordinate.getX() == pointCoordinate.getX() && coordinate.getY() == pointCoordinate.getY())) {
+            if (answer) {
+                System.out.println("Ihre Anwort war korrekt.");
+                completedTasks++;
+            }
+        } else if (!answer) {
+            System.out.println("Ihre Anwort war korrekt.");
+            completedTasks++;
+        } else {
+            System.out.println("Ihre Anwort war nicht korrekt.");
+        }
+    }
+
+    /**
+     * Returns the available time
+     *
+     * @return the time in format mm:ss
      */
     public String getTime() {
         return clock.getTimeInMinutesAndSeconds();
     }
 
     /**
-     * Get current piece piece.
+     * Returns the currently active Piece on the board
      *
-     * @return the piece
+     * @return the Piece
      */
-    public Piece getCurrentPiece(){
+    public Piece getCurrentPiece() {
         return currentPiece;
+    }
+
+    /**
+     * Returns the current Coordinate of the Piece
+     *
+     * @return The coordinate
+     */
+    public Coordinate getPointCoordinate() {
+        return pointCoordinate;
+    }
+
+    /**
+     * Returns the number of available moves for the Piece
+     *
+     * @return number of moves
+     */
+    public int getNumberOfMoves() {
+        return numberOfMoves;
+    }
+
+    /**
+     * Returns the number of completedTasks
+     *
+     * @return number of completed tasks
+     */
+    public int getCompletedTasks() {
+        return completedTasks;
     }
 }
 

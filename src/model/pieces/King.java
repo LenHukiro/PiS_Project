@@ -4,7 +4,7 @@ import model.GameModel;
 import model.Coordinate;
 
 import java.awt.*;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
  * The type King.
@@ -23,15 +23,17 @@ public class King extends Piece {
     }
 
     /**
-     * @return
+     * Returns the possible moves for the Piece
+     *
+     * @return the moves
      */
     @Override
-    public HashSet<Coordinate> possibleMoves() {
-        HashSet<Coordinate> moves = new HashSet<>();
+    public ArrayList<Coordinate> possibleMoves() {
+        ArrayList<Coordinate> moves = new ArrayList<>();
         int[] modifiers = new int[]{1, 0, -1};
         for (int i = 0; i <= 2; i++) {
             for (int j = 0; j <= 2; j++) {
-                if (board.isCoordniateInBounds(coordinate.getX() + modifiers[i], coordinate.getY() + modifiers[j]) && !(i == j && modifiers[j] == 0)) {
+                if (model.isCoordinateInBounds(coordinate.getX() + modifiers[i], coordinate.getY() + modifiers[j]) && !(i == j && modifiers[j] == 0)) {
                     moves.add(Coordinate.createCoordinate(coordinate.getX() + modifiers[i], coordinate.getY() + modifiers[j]));
                 }
             }
@@ -40,7 +42,9 @@ public class King extends Piece {
     }
 
     /**
-     * @return
+     * Returns the name of the Piece with its article
+     *
+     * @return The name of the Piece
      */
     @Override
     public String getName() {

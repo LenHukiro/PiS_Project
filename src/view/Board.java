@@ -10,22 +10,20 @@ public class Board {
     /**
      * The Cells.
      */
-    Cell[][] cells;
+    private final Cell[][] cells;
     /**
      * The View.
      */
-    GameView view;
+    private final GameView view;
 
     /**
      * The X.
      */
-    int x,
+    private int x,
     /**
      * The Y.
      */
     y;
-
-    Cell markedCell;
 
     /**
      * Instantiates a new Board.
@@ -48,7 +46,7 @@ public class Board {
     }
 
     /**
-     * Place piece.
+     * Place Piece.
      *
      * @param type  the type
      * @param color the color
@@ -56,10 +54,7 @@ public class Board {
      * @param y     the y
      */
     public void placePiece(PieceType type, Color color, int x, int y) {
-        if(markedCell != null)
-            markedCell.unmark();
-
-        markedCell  = cells[y][x];
+        Cell markedCell = cells[y][x];
         markedCell.placePiece(new Piece(view, type, color == Color.BLACK));
     }
 
@@ -76,6 +71,20 @@ public class Board {
             y += 50;
             cellX = 10;
         }
-        x = cellX;
+        x = 10;
+        y = 10;
+    }
+
+    public void resetBoard() {
+        for (Cell[] cell : cells) {
+            for (Cell innerCell : cell) {
+                innerCell.mark(false);
+                innerCell.placePiece(null);
+            }
+        }
+    }
+
+    public void markPiece(int x, int y) {
+        cells[x][y].mark(true);
     }
 }

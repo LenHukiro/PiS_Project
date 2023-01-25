@@ -7,14 +7,18 @@ import java.awt.*;
  */
 public class Cell {
 
-    private final Color color;
-    int radius = 50;
     /**
-     * The Piece.
+     * The color of the Cell
+     */
+    private final Color color;
+
+    /**
+     * The Piece displayed in the Cell
      */
     Piece piece;
+
     /**
-     * The Marked.
+     * Flag to mark the Cell
      */
     boolean marked;
 
@@ -28,34 +32,36 @@ public class Cell {
     }
 
     /**
-     * Mark.
+     * Sets the flag to mark the Cell
      */
-    public void mark() {
-        marked = true;
+    public void mark(boolean mark) {
+        marked = mark;
     }
 
     /**
-     * Unmark.
+     * Inserts a Piece into the cell
      */
-    public void unmark() {
-        marked = false;
-        this.piece = null;
-    }
-
     public void placePiece(Piece piece){
         this.piece = piece;
     }
 
     /**
-     * Draw.
+     * Draws the Cell
      *
-     * @param view the view
-     * @param x    the x
-     * @param y    the y
+     * @param view the view of the game
+     * @param x    the x coordinate of the Cell
+     * @param y    the y coordinate of the Cell
      */
     public void draw(GameView view, int x, int y) {
         view.fill(color.getRGB());
-        if (marked) view.fill(Color.RED.getRGB());
+        if (marked) {
+            view.fill(Color.RED.getRGB());}
+
+        int radius = 50;
         view.rect(x, y, radius, radius);
+        if(piece != null){
+            view.image(piece.getImage(),x,y, radius, radius);
+        }
+
     }
 }

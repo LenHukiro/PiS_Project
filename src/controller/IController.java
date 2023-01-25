@@ -5,24 +5,24 @@ package controller;
  */
 public interface IController {
     /**
-     * New game.
+     * Starts a new game of the model.
      */
     void newGame();
 
     /**
-     * Answer accept.
+     * Accepts the user answer onto the model.
      */
-    void answer_accept();
+    void answer(boolean userInput);
 
     /**
-     * Answer decline.
-     */
-    void answer_decline();
-
-    /**
-     * Gets time.
+     * Gets time from the model
      *
-     * @return the time
+     * @return the time as format mm:ss
      */
     String getTime();
+
+    /**
+     * Starts the timer for the view
+     */
+    void startTimer();
 }

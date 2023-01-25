@@ -4,13 +4,16 @@ import model.GameModel;
 import model.Coordinate;
 
 import java.awt.*;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
- * The type Pawn.
+ * The Piece Pawn.
  */
 public class Pawn extends Piece {
-    private final boolean hasntMoved;
+    /**
+     * Boolean, if the pawn is on a pawn starting position
+     */
+    private final boolean hasNotMoved;
 
     /**
      * Instantiates a new Pawn.
@@ -21,19 +24,29 @@ public class Pawn extends Piece {
      */
     public Pawn(GameModel board, Color color, Coordinate coordinate) {
         super(board, color, coordinate);
-        hasntMoved = color == Color.BLACK && coordinate.getY() == 1 || color == Color.WHITE && coordinate.getY() == 6;
+        hasNotMoved = color == Color.BLACK && coordinate.getY() == 1 || color == Color.WHITE && coordinate.getY() == 6;
     }
 
+    /**
+     * Returns the possible moves for the Piece
+     *
+     * @return the moves
+     */
     @Override
-    public HashSet<Coordinate> possibleMoves() {
-        HashSet<Coordinate> moves = new HashSet<>();
+    public ArrayList<Coordinate> possibleMoves() {
+        ArrayList<Coordinate> moves = new ArrayList<>();
         int modifier = color == Color.BLACK ? 1 : -1;
-        if (hasntMoved)
+        if (hasNotMoved)
             moves.add(Coordinate.createCoordinate(coordinate.getX(), coordinate.getY() + 2 * modifier));
         moves.add(Coordinate.createCoordinate(coordinate.getX(), coordinate.getY() + modifier));
         return moves;
     }
 
+    /**
+     * Returns the name of the Piece with its article
+     *
+     * @return The name of the Piece
+     */
     @Override
     public String getName() {
         return "der " + this.getColorAdverb() + "  Bauer";

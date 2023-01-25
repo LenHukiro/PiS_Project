@@ -11,19 +11,19 @@ public class Piece {
     /**
      * The Img.
      */
-    PImage img;
+    private PImage img;
     /**
      * The View.
      */
-    GameView view;
+    private final GameView view;
     /**
      * The Color.
      */
-    Color color;
+    private final Color color;
     /**
      * The Type.
      */
-    PieceType type;
+    private final PieceType type;
 
     /**
      * Instantiates a new Piece.

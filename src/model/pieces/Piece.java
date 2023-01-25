@@ -1,44 +1,45 @@
 package model.pieces;
 
-import model.GameModel;
 import model.Coordinate;
+import model.GameModel;
 
 import java.awt.*;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 
 /**
- * The type Piece.
+ * The Piece class.
  */
 public abstract class Piece {
+
     /**
-     * The Coordinate.
+     * The coordinate of the Piece.
      */
-    Coordinate coordinate;
+    protected Coordinate coordinate;
     /**
-     * The Board.
+     * The playing model of the Piece.
      */
-    GameModel board;
+    protected final GameModel model;
     /**
-     * The Color.
+     * The Color of the model
      */
-    Color color;
+    protected final Color color;
 
     /**
      * Instantiates a new Piece.
      *
-     * @param board      the board
-     * @param color      the color
-     * @param coordinate the coordinate
+     * @param board      the model of the Piece
+     * @param color      the color of the Piece
+     * @param coordinate the coordinate of the Piece
      */
     public Piece(GameModel board, Color color, Coordinate coordinate) {
-        this.board = board;
+        this.model = board;
         this.color = color;
         this.coordinate = coordinate;
     }
 
     /**
-     * Gets coordinate.
+     * Gets coordinate of the Piece.
      *
      * @return the coordinate
      */
@@ -47,14 +48,23 @@ public abstract class Piece {
     }
 
     /**
-     * Possible moves hash set.
+     * Set coordinate of the Piece.
      *
-     * @return the hash set
+     * @param coordinate the coordinate
      */
-    public abstract HashSet<Coordinate> possibleMoves();
+    public void setCoordinate(Coordinate coordinate) {
+        this.coordinate = coordinate;
+    }
 
     /**
-     * Gets color.
+     * Returns the possible moves as ArrayList<Coordinate>
+     *
+     * @return the possible Moves
+     */
+    public abstract ArrayList<Coordinate> possibleMoves();
+
+    /**
+     * Gets color of the Piece
      *
      * @return the color
      */
@@ -63,30 +73,20 @@ public abstract class Piece {
     }
 
     /**
-     * Set coordinate.
-     *
-     * @param coordinate the coordinate
-     */
-    public void setCoordinate(Coordinate coordinate){ this.coordinate = coordinate;}
-
-    /**
-     * Gets name.
+     * Gets name of the Piece
      *
      * @return the name
      */
     public abstract String getName();
 
     /**
-     * Gets color adverb.
+     * Gets color adverb of the Piece
      *
      * @return the color adverb
      */
     protected String getColorAdverb() {
         return getColor() == Color.BLACK ? "schwarze" : "weiße";
     }
-    public Object clone() throws CloneNotSupportedException
-    {
-        return super.clone();
-    }
+
 }
 

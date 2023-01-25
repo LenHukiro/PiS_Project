@@ -10,7 +10,7 @@ public class Coordinate {
     /**
      * The X.
      */
-    int x, /**
+   private int x, /**
      * The Y.
      */
     y;
@@ -89,8 +89,14 @@ public class Coordinate {
     public String getFieldCoordinate(){
         return getBoardLetter(y)+(x+1);
     }
-    private String getBoardLetter(int val){
-        String[] lettes = new String[]{"a","b","c","d","e","f","g","h"};
-        return lettes[val];
+
+    /**
+     * Returns the correct letter of the board from the given row
+     * @param row the row
+     * @return The boardLetter
+     */
+    private String getBoardLetter(int row){
+        String[] boardLetter = new String[]{"a","b","c","d","e","f","g","h"};
+        return boardLetter[row];
     }
 }

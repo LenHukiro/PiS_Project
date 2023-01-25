@@ -1,7 +1,9 @@
 package view;
 
-import controlP5.*;
 import controlP5.Button;
+import controlP5.ControlP5;
+import controlP5.ControlP5Constants;
+import controlP5.Textfield;
 import controller.GameController;
 import controller.IController;
 import processing.core.PApplet;
@@ -16,31 +18,41 @@ import java.util.HashMap;
 public class GameView extends PApplet implements IView {
 
     /**
-     * The P 5.
-     */
-    ControlP5 p5;
-    /**
      * The Controller.
      */
-    IController controller;
+    private final IController controller;
 
     /**
      * The Images.
      */
-    HashMap<String,PImage> images = new HashMap<>();
+    private final HashMap<String, PImage> images = new HashMap<>();
 
-    boolean updateBoard = false;
+    /**
+     * Flag if the boards needs to be updated
+     */
+    private boolean updateBoard = false;
     /**
      * The Timer.
      */
-    Textfield timer;
-    /**
-     * The Board.
-     */
-    Board board;
+    private Textfield timer;
 
     /**
-     * Instantiates a new Game view.
+     * The number of correct answers.
+     */
+    private Textfield doneCount;
+
+    /**
+     * The number of available chess moves.
+     */
+    private Textfield numberOfAttempts;
+
+    /**
+     * The visual Board
+     */
+    private Board board;
+
+    /**
+     * Instantiates a new view.
      */
     public GameView() {
         controller = new GameController(this);
@@ -55,87 +67,145 @@ public class GameView extends PApplet implements IView {
         PApplet.main(GameView.class);
     }
 
+    /**
+     * The settings for processing
+     */
     @Override
     public void settings() {
-        size(800, 800);
-    }
-
-    @Override
-    public void setup() {
-        loadImages();
-        p5 = new ControlP5(this);
-        Button newGameBtn = p5.addButton("Neues Spiel").setPosition(420,175);
-        Button yesBtn = p5.addButton("Feld ist erreichbar").setWidth(100).setPosition(420,325);
-        Button noBtn = p5.addButton("Feld ist nicht erreichbar").setWidth(110).setPosition(420,375);
-        timer = p5.addTextfield(controller.getTime()).lock().setPosition(413,10).setWidth(30);
-        newGameBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent ->{ controller.newGame();});
-        yesBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> {
-            controller.answer_accept();
-        });
-        noBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.answer_decline());
-        board = new Board(this);
-        updateBoard = true;
+        size(800, 500);
     }
 
     /**
-     * New game.
+     * THe setup for processing
      */
-    public void newGame(){
-        new Thread(() -> {
-            String time = controller.getTime();
-            while(!time.equals("0:00")){
-                timer.setValue(controller.getTime());
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
-        });
+    @Override
+    public void setup() {
+        loadImages();
+
+        ControlP5 p5 = new ControlP5(this);
+        Button newGameBtn = p5.addButton("Neues Spiel").setPosition(420, 175);
+        Button yesBtn = p5.addButton("Feld ist erreichbar").setWidth(100).setPosition(420, 325).setWidth(120);
+        Button noBtn = p5.addButton("Feld ist nicht erreichbar").setWidth(110).setPosition(420, 365).setWidth(120);
+        timer = p5.addTextfield("clock").setCaptionLabel("").lock().setPosition(413, 10).setWidth(30);
+        numberOfAttempts = p5.addTextfield("numberOfAttempts").setCaptionLabel("").setText("Anzahl Zuege:").lock().setPosition(413, 40).setWidth(70);
+        doneCount = p5.addTextfield("count").setCaptionLabel("").setText("Anzahl korrekter Antworten: 0").lock().setPosition(413, 70).setWidth(140);
+
+        newGameBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.newGame());
+        yesBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.answer(true));
+        noBtn.addListenerFor(ControlP5Constants.ACTION_RELEASE, callbackEvent -> controller.answer(false));
+
+        board = new Board(this);
+
+        updateBoard();
     }
 
+    /**
+     * Starts a new game
+     */
+    public void newGame() {
+        updateBoard();
+        controller.startTimer();
+    }
+
+    /**
+     * Updates the number of current available moves
+     *
+     * @param attempts the available attempts
+     */
+    public void updateNumberOfAttempts(int attempts) {
+        numberOfAttempts.setText("Anzahl Zuege: " + attempts);
+    }
+
+    /**
+     * The draw function of processing
+     */
     @Override
     public void draw() {
-        if(updateBoard) {
+        if (updateBoard) {
             board.draw();
             updateBoard = false;
         }
         timer.setValue(controller.getTime());
     }
 
-    private void loadImages(){
-        String[] pieceNames = new String[]{"bishop_black","bishop_white","king_black","king_white","knight_black","knight_white","pawn_black","pawn_white","queen_black","queen_white","rook_black","rook_white"};
+    /**
+     * Loads the images of the Pieces
+     */
+    private void loadImages() {
+        String[] pieceNames = new String[]{"bishop_black", "bishop_white", "king_black", "king_white", "knight_black", "knight_white", "pawn_black", "pawn_white", "queen_black", "queen_white", "rook_black", "rook_white"};
         for (String pieceName : pieceNames) {
-            images.put(pieceName, loadImage("resources/img/pieces/"+pieceName + ".png"));
+            images.put(pieceName, loadImage("resources/img/pieces/" + pieceName + ".png"));
         }
     }
 
     /**
-     * Get image p image.
+     * Returns the Image for the given Piecetype and color
      *
-     * @param type  the type
-     * @param color the color
-     * @return the p image
+     * @param type  the type of the Piece
+     * @param color the color of the Piece
+     * @return The Image
      */
-    public PImage getImage(PieceType type, Color color){
-        String key =type.toString().toLowerCase()+"_"+color.toString().toLowerCase();
+    public PImage getImage(PieceType type, Color color) {
+        String colorString = (color.equals(Color.BLACK)) ? "black" : "white";
+        String key = type.toString().toLowerCase() + "_" + colorString;
         return images.get(key);
     }
 
     /**
-     * Place piece.
+     * Places Piece onto the board
      *
-     * @param pieceTyp the piece typ
+     * @param pieceTyp the Piece typ
      * @param color    the color
      * @param x        the x
      * @param y        the y
      */
-    public void placePiece(PieceType pieceTyp,Color color, int x, int y){
-        board.placePiece(pieceTyp,color,x,y);
+    public void placePiece(PieceType pieceTyp, Color color, int x, int y) {
+        board.placePiece(pieceTyp, color, x, y);
     }
 
+    /**
+     * Flag to update the board on the next draw()
+     */
     @Override
     public void updateBoard() {
         updateBoard = true;
+    }
+
+    /**
+     * Marks the cell on the board
+     *
+     * @param x the x coordinate of the marked cell
+     * @param y the y coordinate of the marked cell
+     */
+    @Override
+    public void markPiece(int x, int y) {
+        board.markPiece(x, y);
+    }
+
+    /**
+     * Resets the board state
+     */
+    @Override
+    public void resetBoard() {
+        board.resetBoard();
+    }
+
+    /**
+     * Updates the count of correctly answered positions
+     *
+     * @param count The number of correct answers by the user
+     */
+    @Override
+    public void updateDoneCount(int count) {
+        doneCount.setText("Anzahl korrekter Antworten: " + count);
+    }
+
+    /**
+     * Sets the time of the game
+     * @param time The time in format mm:ss
+     */
+    @Override
+    public void setTimer(String time) {
+        timer.setValue(time);
     }
 }

@@ -4,7 +4,7 @@ import model.GameModel;
 import model.Coordinate;
 
 import java.awt.*;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
  * The type Knight.
@@ -21,9 +21,14 @@ public class Knight extends Piece {
         super(board, color,coordinate);
     }
 
+    /**
+     * Returns the possible moves for the Piece
+     *
+     * @return the moves
+     */
     @Override
-    public HashSet<Coordinate> possibleMoves() {
-        HashSet<Coordinate> moves = new HashSet<>();
+    public ArrayList<Coordinate> possibleMoves() {
+        ArrayList<Coordinate> moves = new ArrayList<>();
         int[] knightTwoStep = new int[]{2, -2};
         int[] knightOneStep = new int[]{1, -1};
         for (int k = 0; k < 2; k++) {
@@ -43,6 +48,11 @@ public class Knight extends Piece {
         return moves;
     }
 
+    /**
+     * Returns the name of the Piece with its article
+     *
+     * @return The name of the Piece
+     */
     @Override
     public String getName() {
         return "der " + this.getColorAdverb() + " Springer";

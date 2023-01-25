@@ -12,14 +12,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="addded barebone comments">
-      <change afterPath="$PROJECT_DIR$/src/model/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/Grid.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/view/package-info.java" afterDir="false" />
+    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="- Finished game and finished implementing GUI">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Bishop.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/King.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/pieces/Knight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Knight.java" afterDir="false" />
@@ -30,6 +29,9 @@
       <change beforePath="$PROJECT_DIR$/src/view/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PieceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PieceType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,7 +72,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2ItwWvn2JRepF43ZhL4LFwbfRR2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -133,9 +135,6 @@
       <list>
         <item itemvalue="Application.GameView" />
         <item itemvalue="Application.GameModel" />
-        <item itemvalue="Application.GameView" />
-        <item itemvalue="Application.GameModel" />
-        <item itemvalue="Application.GameView" />
       </list>
     </recent_temporary>
   </component>
@@ -228,11 +227,13 @@
     <MESSAGE value="added Btns and ingame logic" />
     <MESSAGE value="proceeded to add GUI" />
     <MESSAGE value="addded barebone comments" />
-    <option name="LAST_COMMIT_MESSAGE" value="addded barebone comments" />
+    <MESSAGE value="- Finished game and finished implementing GUI" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Finished game and finished implementing GUI" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="model.Coordinate" memberName="y" />
         <PinnedItemInfo parentTag="java.lang.IllegalArgumentException" memberName="backtrace" />
       </pinned-members>
     </pin-to-top-manager>

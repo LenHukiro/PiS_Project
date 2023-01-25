@@ -4,7 +4,7 @@ import model.GameModel;
 import model.Coordinate;
 
 import java.awt.*;
-import java.util.HashSet;
+import java.util.ArrayList;
 
 /**
  * The type Rook.
@@ -14,17 +14,22 @@ public class Rook extends Piece {
     /**
      * Instantiates a new Rook.
      *
-     * @param board      the board
-     * @param color      the color
-     * @param coordinate the coordinate
+     * @param model      the gamemodel
+     * @param color      the color of the rook
+     * @param coordinate the coordinate of the rook
      */
-    public Rook(GameModel board, Color color, Coordinate coordinate) {
-        super(board, color, coordinate);
+    public Rook(GameModel model, Color color, Coordinate coordinate) {
+        super(model, color, coordinate);
     }
 
+    /**
+     * Returns the possible moves for the Piece
+     *
+     * @return the moves
+     */
     @Override
-    public HashSet<Coordinate> possibleMoves() {
-        HashSet<Coordinate> moves = new HashSet<>();
+    public ArrayList<Coordinate> possibleMoves() {
+        ArrayList<Coordinate> moves = new ArrayList<>();
         Coordinate newCoordinate = Coordinate.createCoordinate(coordinate.getX(),coordinate.getY());
         for (int j = 0; j < 8; j++) {
             newCoordinate.setX(j);
@@ -41,6 +46,11 @@ public class Rook extends Piece {
         return moves;
     }
 
+    /**
+     * Returns the name of the Piece with its article
+     *
+     * @return The name of the Piece
+     */
     @Override
     public String getName() {
         return "der " + this.getColorAdverb() + " Turm";
