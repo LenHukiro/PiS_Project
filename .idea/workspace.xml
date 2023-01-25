@@ -12,13 +12,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="- Added IModel&#10;- Added comments and refractored code">
-      <change afterPath="$PROJECT_DIR$/src/controller/package-info.java" afterDir="false" />
+    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="- Finished comments and refractored code">
+      <change afterPath="$PROJECT_DIR$/src/model/ClockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/tests/BishopTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/tests/CoordinateTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/tests/GameModelTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/tests/KingTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/tests/PawnTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/tests/QueenTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/tests/RookTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pis_Chess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Pis_Chess.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Coordinate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/package-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PieceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PieceType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Rook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +44,7 @@
         <option value="Class" />
         <option value="Interface" />
         <option value="package-info" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -71,16 +84,22 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
     "last_opened_file_path": "C:/Users/Nikla/IdeaProjects/Pis_Chess/out",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "proofread"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -90,6 +109,15 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Nikla\IdeaProjects\PiS_Project\resources\img\pieces" />
       <recent name="C:\Users\Nikla\IdeaProjects\Pis_Chess\lib" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+      <recent name="model.pieces.Piece" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="model.pieces" />
+      <recent name="model.tests" />
+      <recent name="model" />
     </key>
   </component>
   <component name="RunManager" selected="Application.GameModel">
@@ -205,7 +233,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674643108007</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="- Finished comments and refractored code">
+      <created>1674653095840</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1674653095840</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,7 +266,8 @@
     <MESSAGE value="addded barebone comments" />
     <MESSAGE value="- Finished game and finished implementing GUI" />
     <MESSAGE value="- Added IModel&#10;- Added comments and refractored code" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Added IModel&#10;- Added comments and refractored code" />
+    <MESSAGE value="- Finished comments and refractored code" />
+    <option name="LAST_COMMIT_MESSAGE" value="- Finished comments and refractored code" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

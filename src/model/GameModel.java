@@ -68,6 +68,7 @@ public class GameModel implements IModel {
     /**
      * Starts a new game
      */
+    @Override
     public void newGame() {
         newGame(500);
     }
@@ -78,6 +79,7 @@ public class GameModel implements IModel {
      *
      * @param seconds the seconds
      */
+    @Override
     public void newGame(int seconds) {
         game = true;
         generateTask();
@@ -155,6 +157,7 @@ public class GameModel implements IModel {
      *
      * @param answer the answer
      */
+    @Override
     public void answerTask(boolean answer) {
         if (!game) return;
         evaluateAnswer(getPieceCoordinates(), answer);
@@ -194,14 +197,14 @@ public class GameModel implements IModel {
     private void evaluateAnswer(ArrayList<Coordinate> coordinateStack, boolean answer) {
         if (coordinateStack.stream().anyMatch(coordinate -> coordinate.getX() == pointCoordinate.getX() && coordinate.getY() == pointCoordinate.getY())) {
             if (answer) {
-                System.out.println("Ihre Anwort war korrekt.");
+                System.out.println("Ihre Antwort war korrekt.");
                 completedTasks++;
             }
         } else if (!answer) {
-            System.out.println("Ihre Anwort war korrekt.");
+            System.out.println("Ihre Antwort war korrekt.");
             completedTasks++;
         } else {
-            System.out.println("Ihre Anwort war nicht korrekt.");
+            System.out.println("Ihre Antwort war nicht korrekt.");
         }
     }
 
@@ -210,6 +213,7 @@ public class GameModel implements IModel {
      *
      * @return the time in format mm:ss
      */
+    @Override
     public String getTime() {
         return clock.getTimeInMinutesAndSeconds();
     }
@@ -219,6 +223,7 @@ public class GameModel implements IModel {
      *
      * @return the Piece
      */
+    @Override
     public Piece getCurrentPiece() {
         return currentPiece;
     }
@@ -228,6 +233,7 @@ public class GameModel implements IModel {
      *
      * @return The coordinate
      */
+    @Override
     public Coordinate getPointCoordinate() {
         return pointCoordinate;
     }
@@ -237,6 +243,7 @@ public class GameModel implements IModel {
      *
      * @return number of moves
      */
+    @Override
     public int getNumberOfMoves() {
         return numberOfMoves;
     }
@@ -246,6 +253,7 @@ public class GameModel implements IModel {
      *
      * @return number of completed tasks
      */
+    @Override
     public int getCompletedTasks() {
         return completedTasks;
     }

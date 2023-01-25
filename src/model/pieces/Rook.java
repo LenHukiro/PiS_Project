@@ -19,7 +19,7 @@ public class Rook extends Piece {
     /**
      * Instantiates a new Rook.
      *
-     * @param model      the gamemodel
+     * @param model      the GameModel
      * @param color      the color of the rook
      * @param coordinate the coordinate of the rook
      */

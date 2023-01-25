@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * The abstract class, which is being used for every Piece inside the model.
  * Every new property, which affects every piece has to be defined in this class.
  * <p>
- * Since this is an abstract class it cannot be instanciated, though functions are being used outside of this package from this class.
+ * Since this is an abstract class it cannot be instanced, though functions are being used outside of this package from this class.
  * Here are some examples on how to use them:
  * setCoordinate(Coordinate coordinate): This function sets the current coordinate of the piece to the given coordinate.
  * getCoordinate(): This function returns the current coordinate of the piece.

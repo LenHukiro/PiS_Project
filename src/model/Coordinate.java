@@ -3,7 +3,7 @@ package model;
 import java.util.Random;
 
 /**
- * The coordinate class handels the coordinates for the model.
+ * The coordinate class handles the coordinates for the model.
  * If a coordinate is not inside the bounds, the coordinate has the x and y values of -1;
  * <p>
  * To use this class you either need to call the static createCoordinate(int x, int y) or the static createRandomCoordinate() function, which returns a coordinate with random x and y values.
@@ -34,7 +34,7 @@ public class Coordinate {
     }
 
     /**
-     * Ctatic constructor to create a random coordinate inside the bounds
+     * Static constructor to create a random coordinate inside the bounds
      *
      * @return the coordinate
      */

@@ -41,7 +41,7 @@ public interface IView {
     void newGame();
 
     /**
-     * Updates the viewable component to show the number of currently avalable moves
+     * Updates the viewable component to show the number of currently available moves
      * @param numberOfMoves the number of moves
      */
     void updateNumberOfAttempts(int numberOfMoves);

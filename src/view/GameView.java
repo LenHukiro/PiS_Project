@@ -146,7 +146,7 @@ public class GameView extends PApplet implements IView {
     }
 
     /**
-     * Returns the Image for the given Piecetype and color
+     * Returns the Image for the given PieceType and color
      *
      * @param type  the type of the Piece
      * @param color the color of the Piece
