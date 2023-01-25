@@ -13,7 +13,14 @@ import java.awt.*;
 import java.util.HashMap;
 
 /**
- * The type Game view.
+ * The Game's view.
+ *<p></p>
+ * The view is being used to show a graphical interface of the game to the user.
+ * Since the view is extending PApplet(Processing), it is only necessary to call the constructor :
+ * GameView view = new GameView();
+ * <p></p>
+ * Internally GameView calls the settings(),setup() function to set the size of the application and to create the GUI components.
+ * After that the draw() is being called 30 times a second, unless the processor is not fast enough to achieve the frame rate.
  */
 public class GameView extends PApplet implements IView {
 

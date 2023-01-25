@@ -7,7 +7,12 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * The type Knight.
+ * The Piece Knight, which is being used in the model
+ * <p>
+ * The following functions are usually being used:
+ * getPossibleMoves() to get the available moves for this piece
+ * getName() returns a string with the name of the piece including its article
+ *
  */
 public class Knight extends Piece {
     /**

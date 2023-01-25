@@ -7,16 +7,28 @@ import view.IView;
 import view.PieceType;
 
 /**
- * The type Game controller.
+ * The Game's controller.
+ * <p></p>
+ * The controller is being used to transmit data between the model and the view and to update the view.
+ * It can be used inside the GameView as such:
+ *<p></p>
+ * GameController controller = new GameController(this);
+ * and every public method is being used inside the view.
+ * A few examples:
+ * newGame(); Update the GameView to start a new game and creates a new model
+ * answer(true); passes the answer through the model and updates the view
+ * startTimer() starts the timer of the view (WARNING:NOT THE TIMER INSIDE THE MODEL, THAT TIMER IS STARTED ON ITS OWN)
+ * placePiece(Piece currentPiece) places a piece inside the board of the view
+ *
  */
 public class GameController implements IController {
 
     /**
-     * The Model.
+     * The Model of the game
      */
      private final GameModel model;
     /**
-     * The View.
+     * The View of the game
      */
     private final IView view;
 
@@ -48,7 +60,7 @@ public class GameController implements IController {
      */
     @Override
     public void answer(boolean userInput) {
-        model.answer(userInput);
+        model.answerTask(userInput);
         view.updateBoard();
         view.updateNumberOfAttempts(model.getNumberOfMoves());
         view.updateDoneCount(model.getCompletedTasks());

@@ -3,35 +3,51 @@ package view;
 import java.awt.*;
 
 /**
- * The type Board.
+ * The type Board for the view.
+ *<p></p>
+ * The board is being used to create Cells, which store information on the current Piece of the marked Cell.
+ * <p></p>
+ * The board can be used like this:<p></p>
+ * Board board = new Board(view): Instantiates the board.
+ * board.placePiece(view.Piece): PLaces the piece inside the correct cell.
+ * board.draw(): THe draw function for processing, to draw the board and its cells.
+ * board.resetBoard(): Removes the mark of the cell and the Piece inside the board.
+ * board.markPiece(int x, int y): marks the piece on the given x and y coordinate.
  */
 public class Board {
 
     /**
-     * The Cells.
+     * The Cells of the board.
      */
-    private final Cell[][] cells;
+    private Cell[][] cells;
     /**
-     * The View.
+     * The View of the board.
      */
     private final GameView view;
 
     /**
-     * The X.
+     * The X position of the board.
      */
     private int x,
     /**
-     * The Y.
+     * The Y position of the board.
      */
     y;
 
     /**
-     * Instantiates a new Board.
+     * Instantiates a new Board and sets the colors of the cells.
      *
      * @param view the view
      */
     public Board(GameView view) {
         this.view = view;
+        createCells();
+    }
+
+    /**
+     * Creates the cells for the board and sets their color.
+     */
+    private void createCells() {
         cells = new Cell[8][8];
         boolean alternatingColor = false;
         for (int i = 0; i < cells.length; i++) {
@@ -46,7 +62,7 @@ public class Board {
     }
 
     /**
-     * Place Piece.
+     * Place Piece inside the board.
      *
      * @param type  the type
      * @param color the color
@@ -59,7 +75,7 @@ public class Board {
     }
 
     /**
-     * Draw.
+     * Draws the cells of the board.
      */
     public void draw() {
         int cellX = x;
@@ -75,6 +91,9 @@ public class Board {
         y = 10;
     }
 
+    /**
+     * Resets the marked Cell and the current Piece inside the cells.
+     */
     public void resetBoard() {
         for (Cell[] cell : cells) {
             for (Cell innerCell : cell) {
@@ -84,6 +103,11 @@ public class Board {
         }
     }
 
+    /**
+     * Marks a Cell inside the board
+     * @param x coordinate of the cell
+     * @param y coordinate of the cell
+     */
     public void markPiece(int x, int y) {
         cells[x][y].mark(true);
     }

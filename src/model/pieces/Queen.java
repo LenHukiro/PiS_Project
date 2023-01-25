@@ -7,7 +7,12 @@ import java.awt.*;
 import java.util.ArrayList;
 
 /**
- * The type Queen.
+ * The Piece Queen, which is being used in the model
+ * <p>
+ * The following functions are usually being used:
+ * getPossibleMoves() to get the available moves for this piece
+ * getName() returns a string with the name of the piece including its article
+ *
  */
 public class Queen extends Piece {
     /**
@@ -29,10 +34,8 @@ public class Queen extends Piece {
     @Override
     public ArrayList<Coordinate> possibleMoves() {
         ArrayList<Coordinate> moves = new ArrayList<>();
-        Rook rook = new Rook(model, color, coordinate);
-        Bishop bishop = new Bishop(model, color, coordinate);
-        moves.addAll(rook.possibleMoves());
-        moves.addAll(bishop.possibleMoves());
+        moves.addAll(new Rook(model, color, coordinate).possibleMoves());
+        moves.addAll(new Bishop(model, color, coordinate).possibleMoves());
         return moves;
     }
 

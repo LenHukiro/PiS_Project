@@ -13,9 +13,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="- Finished game and finished implementing GUI">
+      <change afterPath="$PROJECT_DIR$/src/model/IModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controller/IController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/IController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clock.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Coordinate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameModel.java" afterDir="false" />
@@ -29,9 +29,8 @@
       <change beforePath="$PROJECT_DIR$/src/view/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Grid.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Piece.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PieceType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PieceType.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,9 +40,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -80,21 +79,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Nikla/IdeaProjects/Pis_Chess/out&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "create.test.in.the.same.root": "true",
+    "last_opened_file_path": "C:/Users/Nikla/IdeaProjects/Pis_Chess/out",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="model" />
@@ -104,7 +103,7 @@
       <recent name="C:\Users\Nikla\IdeaProjects\Pis_Chess\lib" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameView">
+  <component name="RunManager" selected="Application.GameModel">
     <configuration name="GameModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="model.GameModel" />
       <module name="Pis_Chess" />
@@ -133,8 +132,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameView" />
         <item itemvalue="Application.GameModel" />
+        <item itemvalue="Application.GameView" />
       </list>
     </recent_temporary>
   </component>
@@ -203,7 +202,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674430987668</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="- Finished game and finished implementing GUI">
+      <created>1674636448236</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1674636448236</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

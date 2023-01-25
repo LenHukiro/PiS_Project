@@ -5,7 +5,9 @@ import processing.core.PImage;
 import java.awt.*;
 
 /**
- * The type Piece.
+ * The type Piece for the view
+ *<p></p>
+ * The piece
  */
 public class Piece {
     /**

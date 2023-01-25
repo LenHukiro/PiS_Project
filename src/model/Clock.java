@@ -2,7 +2,10 @@ package model;
 
 
 /**
- * The type Clock.
+ * A Clock class to track the available time for a player.
+ *<p>
+ * The class extends a thread, so it can be started via the start() function.
+ * To return the current time the function getTimeInMinutesAndSeconds() can be used.
  */
 public class Clock extends Thread {
 
@@ -27,7 +30,7 @@ public class Clock extends Thread {
     }
 
     /**
-     *
+     * Starts the Thread(the clock)
      */
     @Override
     public void run() {
@@ -49,11 +52,10 @@ public class Clock extends Thread {
      * @return the time in the format mm:ss
      */
     public String getTimeInMinutesAndSeconds() {
-        int minutes = seconds / 60;
         String secondString = String.valueOf(seconds % 60);
         if ((seconds % 60) < 10) {
             secondString = "0" + secondString;
         }
-        return minutes + ":" + secondString;
+        return seconds / 60 + ":" + secondString;
     }
 }

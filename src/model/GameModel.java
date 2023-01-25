@@ -7,15 +7,25 @@ import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * The game itself
- *
+ * The chess trainer model class.
+ * <p></p>
  * THe model is can be used like this:
- * Gamemodel model = new Gamemodel();
- *
+ * GameModel model = new GameModel();
+ * <p></p>
+ * model.newGame();
  * model.answer(true);
  * model.answer(false);
+ * <p></p>
+ * You can alternatively use model.newGame(100) to set the internal clock to 100 seconds or any amount of seconds.
+ * <p></p>
+ * To review the current task again those methods can be used:
+ * getCompletedTasks(): Returns the number of correct answered tasks.
+ * getTime(): Returns the current time left for the player.
+ * getCurrentPiece(): Returns the current piece of the task.
+ * getNumberOfMoves(): Returns the number of available moves for the piece.
+ * getPointCoordinate(): Returns the coordinate the current piece has to move to.
  */
-public class GameModel {
+public class GameModel implements IModel {
 
     /**
      * The Clock.
@@ -52,7 +62,7 @@ public class GameModel {
      * Instantiates a new Board.
      */
     public GameModel() {
-        clock = new Clock(this,0);
+        clock = new Clock(this, 0);
     }
 
     /**
@@ -63,7 +73,8 @@ public class GameModel {
     }
 
     /**
-     * Starts a new game
+     * Starts a new game with the given amount of seconds
+     * It is recommended to not use seconds<=0 seconds as the game would be instantly over.
      *
      * @param seconds the seconds
      */
@@ -144,7 +155,7 @@ public class GameModel {
      *
      * @param answer the answer
      */
-    public void answer(boolean answer) {
+    public void answerTask(boolean answer) {
         if (!game) return;
         evaluateAnswer(getPieceCoordinates(), answer);
         generateTask();

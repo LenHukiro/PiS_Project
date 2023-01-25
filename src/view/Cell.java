@@ -3,7 +3,7 @@ package view;
 import java.awt.*;
 
 /**
- * The type Cell.
+ * The Cell class.
  */
 public class Cell {
 

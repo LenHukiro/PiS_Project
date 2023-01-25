@@ -3,7 +3,12 @@ package model;
 import java.util.Random;
 
 /**
- * The type Coordinate.
+ * The coordinate class handels the coordinates for the model.
+ * If a coordinate is not inside the bounds, the coordinate has the x and y values of -1;
+ * <p>
+ * To use this class you either need to call the static createCoordinate(int x, int y) or the static createRandomCoordinate() function, which returns a coordinate with random x and y values.
+ * <p>
+ * To get the values of this class, getters for x and y can be used and getBoardLetter() to return the current coordinate in Algebraic notation(<a href="https://en.wikipedia.org/wiki/Algebraic_notation_(chess)">...</a>)
  */
 public class Coordinate {
 
@@ -16,7 +21,7 @@ public class Coordinate {
     y;
 
     /**
-     * Create coordinate coordinate.
+     * Static constructor to create a coordinate with the given values
      *
      * @param x the x
      * @param y the y
@@ -29,7 +34,7 @@ public class Coordinate {
     }
 
     /**
-     * Create random coordinate coordinate.
+     * Ctatic constructor to create a random coordinate inside the bounds
      *
      * @return the coordinate
      */
@@ -40,13 +45,18 @@ public class Coordinate {
             return new Coordinate(x, y);
     }
 
+    /**
+     * internal constructor of the class
+     * @param x the x value
+     * @param y the y value
+     */
     private Coordinate(int x, int y) {
         this.x = x;
         this.y = y;
     }
 
     /**
-     * Gets x.
+     * Gets x value.
      *
      * @return the x
      */
@@ -55,7 +65,7 @@ public class Coordinate {
     }
 
     /**
-     * Gets y.
+     * Gets y value.
      *
      * @return the y
      */
@@ -64,7 +74,7 @@ public class Coordinate {
     }
 
     /**
-     * Sets x.
+     * Sets x value.
      *
      * @param x the x
      */
@@ -73,7 +83,7 @@ public class Coordinate {
     }
 
     /**
-     * Sets y.
+     * Sets y value.
      *
      * @param y the y
      */
@@ -82,21 +92,11 @@ public class Coordinate {
     }
 
     /**
-     * Get field coordinate string.
+     * Gets the coordinates as Algebraic notation(see top of this class for more details)
      *
-     * @return the string
+     * @return the string in AN notation
      */
     public String getFieldCoordinate(){
-        return getBoardLetter(y)+(x+1);
-    }
-
-    /**
-     * Returns the correct letter of the board from the given row
-     * @param row the row
-     * @return The boardLetter
-     */
-    private String getBoardLetter(int row){
-        String[] boardLetter = new String[]{"a","b","c","d","e","f","g","h"};
-        return boardLetter[row];
+        return (new String[]{"a","b","c","d","e","f","g","h"}[y])+(x+1);
     }
 }
