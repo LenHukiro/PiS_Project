@@ -15,10 +15,21 @@ public class Coordinate {
     /**
      * The X.
      */
-   private int x, /**
+    private int x, /**
      * The Y.
      */
     y;
+
+    /**
+     * internal constructor of the class
+     *
+     * @param x the x value
+     * @param y the y value
+     */
+    private Coordinate(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
 
     /**
      * Static constructor to create a coordinate with the given values
@@ -30,7 +41,7 @@ public class Coordinate {
     public static Coordinate createCoordinate(int x, int y) {
         if (x <= 7 && x >= 0 && y <= 7 && y >= 0)
             return new Coordinate(x, y);
-        return new Coordinate(-1,-1);
+        return new Coordinate(-1, -1);
     }
 
     /**
@@ -39,20 +50,7 @@ public class Coordinate {
      * @return the coordinate
      */
     public static Coordinate createRandomCoordinate() {
-        Random random = new Random();
-        int x = random.nextInt(0, 8);
-        int y = random.nextInt(0, 8);
-            return new Coordinate(x, y);
-    }
-
-    /**
-     * internal constructor of the class
-     * @param x the x value
-     * @param y the y value
-     */
-    private Coordinate(int x, int y) {
-        this.x = x;
-        this.y = y;
+        return new Coordinate(new Random().nextInt(0, 8), new Random().nextInt(0, 8));
     }
 
     /**
@@ -65,6 +63,16 @@ public class Coordinate {
     }
 
     /**
+     * Sets x value if it is in bounds.
+     *
+     * @param x the x
+     */
+    public void setX(int x) {
+        if (x <= 7 && x >= 0 && y <= 7 && y >= 0)
+            this.x = x;
+    }
+
+    /**
      * Gets y value.
      *
      * @return the y
@@ -74,21 +82,13 @@ public class Coordinate {
     }
 
     /**
-     * Sets x value.
-     *
-     * @param x the x
-     */
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    /**
-     * Sets y value.
+     * Sets y value if it is in bounds.
      *
      * @param y the y
      */
     public void setY(int y) {
-        this.y = y;
+        if (x <= 7 && x >= 0 && y <= 7 && y >= 0)
+            this.y = y;
     }
 
     /**
@@ -96,7 +96,7 @@ public class Coordinate {
      *
      * @return the string in AN notation
      */
-    public String getFieldCoordinate(){
-        return (new String[]{"a","b","c","d","e","f","g","h"}[y])+(x+1);
+    public String getFieldCoordinate() {
+        return (new String[]{"a", "b", "c", "d", "e", "f", "g", "h"}[y]) + (x + 1);
     }
 }

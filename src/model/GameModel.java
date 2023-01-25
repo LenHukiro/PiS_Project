@@ -9,20 +9,20 @@ import java.util.Random;
 /**
  * The chess trainer model class.
  * <p></p>
- * THe model is can be used like this:
+ * The model is can be used like this:
  * GameModel model = new GameModel();
  * <p></p>
- * model.newGame();
- * model.answer(true);
- * model.answer(false);
+ * model.newGame();<p></p>
+ * model.answer(true);<p></p>
+ * model.answer(false);<p></p>
  * <p></p>
  * You can alternatively use model.newGame(100) to set the internal clock to 100 seconds or any amount of seconds.
  * <p></p>
- * To review the current task again those methods can be used:
- * getCompletedTasks(): Returns the number of correct answered tasks.
- * getTime(): Returns the current time left for the player.
- * getCurrentPiece(): Returns the current piece of the task.
- * getNumberOfMoves(): Returns the number of available moves for the piece.
+ * To review the current task again those methods can be used:<p></p>
+ * getCompletedTasks(): Returns the number of correct answered tasks.<p></p>
+ * getTime(): Returns the current time left for the player.<p></p>
+ * getCurrentPiece(): Returns the current piece of the task.<p></p>
+ * getNumberOfMoves(): Returns the number of available moves for the piece.<p></p>
  * getPointCoordinate(): Returns the coordinate the current piece has to move to.
  */
 public class GameModel implements IModel {
@@ -68,18 +68,18 @@ public class GameModel implements IModel {
     /**
      * Starts a new game
      */
-    @Override
+
     public void newGame() {
         newGame(500);
     }
 
     /**
      * Starts a new game with the given amount of seconds
-     * It is recommended to not use seconds<=0 seconds as the game would be instantly over.
+     * It is recommended to not use seconds, which are equal or below 0 as the game would be instantly over.
      *
      * @param seconds the seconds
      */
-    @Override
+
     public void newGame(int seconds) {
         game = true;
         generateTask();
@@ -157,7 +157,6 @@ public class GameModel implements IModel {
      *
      * @param answer the answer
      */
-    @Override
     public void answerTask(boolean answer) {
         if (!game) return;
         evaluateAnswer(getPieceCoordinates(), answer);
@@ -213,7 +212,6 @@ public class GameModel implements IModel {
      *
      * @return the time in format mm:ss
      */
-    @Override
     public String getTime() {
         return clock.getTimeInMinutesAndSeconds();
     }
@@ -223,7 +221,6 @@ public class GameModel implements IModel {
      *
      * @return the Piece
      */
-    @Override
     public Piece getCurrentPiece() {
         return currentPiece;
     }
@@ -233,7 +230,6 @@ public class GameModel implements IModel {
      *
      * @return The coordinate
      */
-    @Override
     public Coordinate getPointCoordinate() {
         return pointCoordinate;
     }
@@ -243,7 +239,6 @@ public class GameModel implements IModel {
      *
      * @return number of moves
      */
-    @Override
     public int getNumberOfMoves() {
         return numberOfMoves;
     }
@@ -253,7 +248,6 @@ public class GameModel implements IModel {
      *
      * @return number of completed tasks
      */
-    @Override
     public int getCompletedTasks() {
         return completedTasks;
     }

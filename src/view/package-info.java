@@ -7,7 +7,7 @@
  * The GameView displays the board and additional GUI Components to show the user meaningful data for the game.
  *
  * @author Niklas Panz
- * version 1.0
+ * @version 1.0
  * @since 1.0
  */
 

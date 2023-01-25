@@ -12,25 +12,39 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="- Finished comments and refractored code">
-      <change afterPath="$PROJECT_DIR$/src/model/ClockTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/tests/BishopTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/tests/CoordinateTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/tests/GameModelTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/tests/KingTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/tests/PawnTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/tests/QueenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/model/tests/RookTest.java" afterDir="false" />
+    <list default="true" id="1cd258a6-f426-4405-bee2-4a575c4effda" name="Changes" comment="finishing touches">
+      <change afterPath="$PROJECT_DIR$/Jshell_example.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/pieces/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/tests/KnightTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/tests/PieceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Pis_Chess_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Pis_Chess_jar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pis_Chess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Pis_Chess.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Clock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/ClockTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tests/ClockTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Coordinate.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Coordinate.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/GameModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/GameModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/IModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/IModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/package-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Bishop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Bishop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/King.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/KnightTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Pawn.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Queen.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/pieces/Rook.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/pieces/Rook.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/tests/BishopTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tests/BishopTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/tests/CoordinateTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tests/CoordinateTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/tests/GameModelTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tests/GameModelTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/tests/KingTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tests/KingTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/tests/PawnTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tests/PawnTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/tests/QueenTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tests/QueenTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/tests/RookTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/tests/RookTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/GameView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/GameView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/IView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/IView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/package-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/package-info.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,10 +55,11 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="module-info" />
+        <option value="package-info" />
         <option value="Class" />
         <option value="Interface" />
-        <option value="package-info" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -73,7 +88,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2ItwWvn2JRepF43ZhL4LFwbfRR2" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -94,12 +109,12 @@
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "create.test.in.the.same.root": "true",
-    "last_opened_file_path": "C:/Users/Nikla/IdeaProjects/Pis_Chess/out",
-    "project.structure.last.edited": "Libraries",
+    "last_opened_file_path": "C:/Users/Nikla/IdeaProjects/PiS_Project/out/production/Pis_Chess",
+    "project.structure.last.edited": "Artifacts",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "proofread"
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -107,6 +122,8 @@
       <recent name="model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Nikla\IdeaProjects\PiS_Project" />
+      <recent name="C:\Users\Nikla\IdeaProjects\PiS_Project\src" />
       <recent name="C:\Users\Nikla\IdeaProjects\PiS_Project\resources\img\pieces" />
       <recent name="C:\Users\Nikla\IdeaProjects\Pis_Chess\lib" />
     </key>
@@ -120,13 +137,13 @@
       <recent name="model" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.GameModel">
+  <component name="RunManager" selected="Application.GameView">
     <configuration name="GameModel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="model.GameModel" />
       <module name="Pis_Chess" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="model.BoardNumbers" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -139,7 +156,7 @@
       <module name="Pis_Chess" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="view.*" />
+          <option name="PATTERN" value="model.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -147,10 +164,51 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="All in Pis_Chess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pis_Chess" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GameModelTest.getTime" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pis_Chess" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model.tests" />
+      <option name="MAIN_CLASS_NAME" value="model.tests.GameModelTest" />
+      <option name="METHOD_NAME" value="getTime" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="model in Pis_Chess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Pis_Chess" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="model.tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="model" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.GameModel" />
         <item itemvalue="Application.GameView" />
+        <item itemvalue="Application.GameModel" />
+        <item itemvalue="JUnit.model in Pis_Chess" />
+        <item itemvalue="JUnit.GameModelTest.getTime" />
+        <item itemvalue="JUnit.All in Pis_Chess" />
       </list>
     </recent_temporary>
   </component>
@@ -240,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674653095840</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="- Added tests&#10;- Finished added comments&#10;- Fixed grammar mistakes">
+      <created>1674654636361</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1674654636361</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -267,7 +332,9 @@
     <MESSAGE value="- Finished game and finished implementing GUI" />
     <MESSAGE value="- Added IModel&#10;- Added comments and refractored code" />
     <MESSAGE value="- Finished comments and refractored code" />
-    <option name="LAST_COMMIT_MESSAGE" value="- Finished comments and refractored code" />
+    <MESSAGE value="- Added tests&#10;- Finished added comments&#10;- Fixed grammar mistakes" />
+    <MESSAGE value="finishing touches" />
+    <option name="LAST_COMMIT_MESSAGE" value="finishing touches" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
@@ -281,5 +348,17 @@
         <watch expression="moves.toArray()[0]" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PiS_Project$model_pieces_in_Pis_Chess.ic" NAME="model.pieces in Pis_Chess Coverage Results" MODIFIED="1674666071635" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.pieces.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PiS_Project$All_in_Pis_Chess.ic" NAME="All in Pis_Chess Coverage Results" MODIFIED="1674673191729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/PiS_Project$model_tests_in_Pis_Chess.ic" NAME="model.tests in Pis_Chess Coverage Results" MODIFIED="1674660667437" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.tests.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/PiS_Project$model_in_Pis_Chess.ic" NAME="model in Pis_Chess Coverage Results" MODIFIED="1674673778061" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>model.tests.*</FILTER>
+    </SUITE>
   </component>
 </project>

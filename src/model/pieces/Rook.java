@@ -9,8 +9,8 @@ import java.util.ArrayList;
 /**
  * The Piece Rook, which is being used in the model
  * <p>
- * The following functions are usually being used:
- * getPossibleMoves() to get the available moves for this piece
+ * The following functions are usually being used:<p></p>
+ * getPossibleMoves() to get the available moves for this piece<p></p>
  * getName() returns a string with the name of the piece including its article
  *
  */

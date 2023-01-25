@@ -4,7 +4,7 @@ package model;
 /**
  * A Clock class to track the available time for a player.
  *<p>
- * The class extends a thread, so it can be started via the start() function.
+ * The class extends a thread, so it can be started via the start() function.<p></p>
  * To return the current time the function getTimeInMinutesAndSeconds() can be used.
  */
 public class Clock extends Thread {
@@ -24,7 +24,7 @@ public class Clock extends Thread {
      * @param board   the board
      * @param seconds the seconds
      */
-    Clock(GameModel board, int seconds) {
+    public Clock(GameModel board, int seconds) {
         this.board = board;
         this.seconds = seconds;
     }
@@ -43,7 +43,6 @@ public class Clock extends Thread {
             }
         }
         board.stopGame();
-        interrupt();
     }
 
     /**

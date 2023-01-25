@@ -10,7 +10,7 @@ import java.awt.*;
  * The board can be used like this:<p></p>
  * Board board = new Board(view): Instantiates the board.
  * board.placePiece(view.Piece): PLaces the piece inside the correct cell.
- * board.draw(): THe draw function for processing, to draw the board and its cells.
+ * board.draw(): The draw function for processing, to draw the board and its cells.
  * board.resetBoard(): Removes the mark of the cell and the Piece inside the board.
  * board.markPiece(int x, int y): marks the piece on the given x and y coordinate.
  */

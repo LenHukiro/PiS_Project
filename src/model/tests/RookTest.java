@@ -1,18 +1,14 @@
 package model.tests;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
+import model.Coordinate;
+import model.pieces.Rook;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-class RookTest {
+import java.awt.*;
 
-    @BeforeEach
-    void setUp() {
-    }
+class RookTest extends PieceTest {
 
-    @AfterEach
-    void tearDown() {
-    }
 
     @Test
     void possibleMoves() {
@@ -20,5 +16,11 @@ class RookTest {
 
     @Test
     void getName() {
+        String expectedWhiteName = "der weiße Turm";
+        String expectedBlackName = "der schwarze Turm";
+        Rook whiteRook = new Rook(model, Color.WHITE, Coordinate.createCoordinate(-1,-1));
+        Assertions.assertEquals(whiteRook.getName(),expectedWhiteName);
+        Rook blackRook = new Rook(model,Color.BLACK,Coordinate.createCoordinate(-1,-1));
+        Assertions.assertEquals(blackRook.getName(),expectedBlackName);
     }
 }

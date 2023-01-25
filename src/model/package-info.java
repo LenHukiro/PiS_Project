@@ -9,7 +9,7 @@
  * After the time expired the game ends, with the number of correct answers being printed.
  *
  * @author Niklas Panz
- * version 1.0
+ * @version 1.0
  * @since 1.0
  */
 

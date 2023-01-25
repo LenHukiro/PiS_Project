@@ -12,8 +12,8 @@ import java.util.ArrayList;
  * Every new property, which affects every piece has to be defined in this class.
  * <p>
  * Since this is an abstract class it cannot be instanced, though functions are being used outside of this package from this class.
- * Here are some examples on how to use them:
- * setCoordinate(Coordinate coordinate): This function sets the current coordinate of the piece to the given coordinate.
+ * Here are some examples on how to use them:<p></p>
+ * setCoordinate(Coordinate coordinate): This function sets the current coordinate of the piece to the given coordinate.<p></p>
  * getCoordinate(): This function returns the current coordinate of the piece.
  *
  */
@@ -64,7 +64,7 @@ public abstract class Piece {
     }
 
     /**
-     * Returns the possible moves as ArrayList<Coordinate>
+     * Returns the possible moves as ArrayList
      *
      * @return the possible Moves
      */

@@ -16,10 +16,10 @@ import java.util.HashMap;
  * The Game's view.
  *<p></p>
  * The view is being used to show a graphical interface of the game to the user.
- * Since the view is extending PApplet(Processing), it is only necessary to call the constructor :
- * GameView view = new GameView();
+ * Since the view is extending PApplet(Processing), it is only necessary to call the constructor:<p></p>
+ * GameView view = new GameView();<p></p>
  * <p></p>
- * Internally GameView calls the settings(),setup() function to set the size of the application and to create the GUI components.
+ * Internally GameView calls the settings(),setup() function to set the size of the application and to create the GUI components.<p></p>
  * After that the draw() is being called 30 times a second, unless the processor is not fast enough to achieve the frame rate.
  */
 public class GameView extends PApplet implements IView {
@@ -83,7 +83,7 @@ public class GameView extends PApplet implements IView {
     }
 
     /**
-     * THe setup for processing
+     * The setup for processing
      */
     @Override
     public void setup() {
@@ -112,6 +112,7 @@ public class GameView extends PApplet implements IView {
     public void newGame() {
         updateBoard();
         controller.startTimer();
+        doneCount.setValue("Anzahl korrekter Antworten: 0");
     }
 
     /**

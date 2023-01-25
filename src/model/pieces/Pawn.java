@@ -10,8 +10,8 @@ import java.util.ArrayList;
  * The Piece Pawn, which is being used in the model
  * <p>
  * The following functions are usually being used:
- * getPossibleMoves() to get the available moves for this piece
- * getName() returns a string with the name of the piece including its article
+ * getPossibleMoves() to get the available moves for this piece<p></p>
+ * getName() returns a string with the name of the piece including its article<p></p>
  *
  */
 public class Pawn extends Piece {
@@ -54,6 +54,6 @@ public class Pawn extends Piece {
      */
     @Override
     public String getName() {
-        return "der " + this.getColorAdverb() + "  Bauer";
+        return "der " + this.getColorAdverb() + " Bauer";
     }
 }
