@@ -110,7 +110,7 @@ public class GameModel implements IModel {
                 pointCoordinate = Coordinate.createRandomCoordinate();
             }
             numberOfMoves = new Random().nextInt(1, 3);
-            System.out.println("Kann die Figur " + currentPiece.getName() + " welches sich auf dem Feld " + currentPiece.getCoordinate().getFieldCoordinate() + " befindet, auf das Feld " + pointCoordinate.getFieldCoordinate() + " in " + numberOfMoves + " Zügen bewegen?");
+            System.out.println("Kann die Figur " + currentPiece.getName() + " welches sich auf dem Feld " + currentPiece.getCoordinate().getFieldCoordinate() + " befindet, auf das Feld " + pointCoordinate.getFieldCoordinate() + " in " + numberOfMoves + " Zuegen bewegen?");
         }
     }
 
