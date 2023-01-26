@@ -54,4 +54,9 @@ public interface IView {
      * @param y the y coordinate of the Piece
      */
     void placePiece(PieceType pieceTyp, Color color, int x, int y);
+
+    /**
+     * Enables the Buttons to answer the task
+     */
+    void enableBtns();
 }

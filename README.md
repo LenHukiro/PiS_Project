@@ -44,3 +44,5 @@ P5 Control Documentation: https://sojamo.de/libraries/controlP5/reference/index.
 Threads: https://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html
 JUnit 5 Documentation: https://junit.org/junit5/docs/current/user-guide/
 
+var model = model.GameModel.class
+import model.*

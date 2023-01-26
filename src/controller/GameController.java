@@ -50,6 +50,7 @@ public class GameController implements IController {
     public void newGame() {
         model.newGame();
         view.newGame();
+        view.enableBtns();
         view.updateNumberOfAttempts(model.getNumberOfMoves());
         placePiece(model.getCurrentPiece());
     }

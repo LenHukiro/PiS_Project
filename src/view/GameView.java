@@ -54,6 +54,14 @@ public class GameView extends PApplet implements IView {
     private Textfield numberOfAttempts;
 
     /**
+     * Btn to answerTask as impossible
+     */
+    Button noBtn;
+    /**
+     * Btn to answerTask as possible
+     */
+    private Button yesBtn;
+    /**
      * The visual Board
      */
     private Board board;
@@ -91,8 +99,8 @@ public class GameView extends PApplet implements IView {
 
         ControlP5 p5 = new ControlP5(this);
         Button newGameBtn = p5.addButton("Neues Spiel").setPosition(420, 175);
-        Button yesBtn = p5.addButton("Feld ist erreichbar").setWidth(100).setPosition(420, 325).setWidth(120);
-        Button noBtn = p5.addButton("Feld ist nicht erreichbar").setWidth(110).setPosition(420, 365).setWidth(120);
+        yesBtn = p5.addButton("Feld ist erreichbar").setWidth(100).setPosition(420, 325).setWidth(120).lock();
+        noBtn = p5.addButton("Feld ist nicht erreichbar").setWidth(110).setPosition(420, 365).setWidth(120).lock();
         timer = p5.addTextfield("clock").setCaptionLabel("").lock().setPosition(413, 10).setWidth(30);
         numberOfAttempts = p5.addTextfield("numberOfAttempts").setCaptionLabel("").setText("Anzahl Zuege:").lock().setPosition(413, 40).setWidth(70);
         doneCount = p5.addTextfield("count").setCaptionLabel("").setText("Anzahl korrekter Antworten: 0").lock().setPosition(413, 70).setWidth(140);
@@ -169,6 +177,12 @@ public class GameView extends PApplet implements IView {
      */
     public void placePiece(PieceType pieceTyp, Color color, int x, int y) {
         board.placePiece(pieceTyp, color, x, y);
+    }
+
+    @Override
+    public void enableBtns() {
+        yesBtn.unlock();
+        noBtn.unlock();
     }
 
     /**
